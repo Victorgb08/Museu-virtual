@@ -1,8 +1,7 @@
 import React from "react";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-function Home(){
-
+function MaisComentadas(){
     const history=useHistory();
 
     return (
@@ -12,9 +11,9 @@ function Home(){
             <br/>
             <Link to="footer" >Footer</Link>
             <br/>
-            <Link to="login" >Login</Link>
+            <Link to="home" >Home</Link>
             <br/>
-            <Link to="maiscomentadas" >MaisComentadas</Link>
+            <Link to="login" >Login</Link>
             <br/>
             <Link to="perfil" >Perfil</Link>
             <br/>
@@ -29,4 +28,4 @@ function Home(){
         );
 }
 
-export default Home;
+export default MaisComentadas;

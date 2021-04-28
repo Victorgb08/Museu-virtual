@@ -1,9 +1,7 @@
 import React from "react";
-import {Link, useHistory} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Home(){
-
-    const history=useHistory();
+function Pinturas(){
 
     return (
         <div>
@@ -12,21 +10,16 @@ function Home(){
             <br/>
             <Link to="footer" >Footer</Link>
             <br/>
+            <Link to="home" >Home</Link>
+            <br/>
             <Link to="login" >Login</Link>
             <br/>
             <Link to="maiscomentadas" >MaisComentadas</Link>
             <br/>
             <Link to="perfil" >Perfil</Link>
             <br/>
-            <button
-                onClick={()=>{
-                    history.push("pinturas")
-                }}
-            >
-                Pinturas
-            </button>
         </div>            
         );
 }
 
-export default Home;
+export default Pinturas;

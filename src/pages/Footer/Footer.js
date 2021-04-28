@@ -1,8 +1,7 @@
 import React from "react";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-function Home(){
-
+function Footer(){
     const history=useHistory();
 
     return (
@@ -10,7 +9,7 @@ function Home(){
             <h1>Login</h1>
             <Link to="cadastro">Cadastro</Link>
             <br/>
-            <Link to="footer" >Footer</Link>
+            <Link to="home" >Home</Link>
             <br/>
             <Link to="login" >Login</Link>
             <br/>
@@ -29,4 +28,4 @@ function Home(){
         );
 }
 
-export default Home;
+export default Footer;
