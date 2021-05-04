@@ -1,5 +1,7 @@
+import { IconButton } from "@material-ui/core";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { ImHome } from "react-icons/im";
 import { useHistory } from "react-router-dom";
 import "./Login.css";
 
@@ -34,12 +36,19 @@ function Login() {
               </Form.Group>
               <Button variant="dark" onClick={() => history.push("Home")}>
                 {" "}
-                LOGIN{" "}
+                Login{" "}
               </Button>{" "}
-              <Button className="cadastroButton" variant="dark" onClick={() => history.push("Cadastro")}>
+              <Button
+                className="cadastroButton"
+                variant="dark"
+                onClick={() => history.push("Cadastro")}
+              >
                 {" "}
-                CADASTRO{" "}
+                Cadastro{" "}
               </Button>{" "}
+              <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
+                <ImHome style={{height: "25px", width: "25px"}}/>
+              </Button>
             </Form>
           </div>
         </div>
