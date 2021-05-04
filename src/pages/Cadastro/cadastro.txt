@@ -1,0 +1,51 @@
+/* so pra ver
+        
+<h1><font face="helvetica">CADASTRE-SE</font></h1>
+                <h7><font face="helvetica">É fácil e rápido!</font></h7>
+        <img src="https://images.pexels.com/photos/1337386/pexels-photo-1337386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="alfabeto"/>
+        
+        <input 
+                            id="NAME" 
+                            type="text" 
+                            placeholder="Nome"
+                            // o name serve para indentificar o input na hora de chamar a função
+                            name="name" 
+                            onChange={handleInputChange}/>
+                        <input 
+                            id="EMAIL" 
+                            type="text" 
+                            placeholder="Email" 
+                            name="email"
+                            onChange={handleInputChange}/>
+                        <input 
+                            id="SENHA" 
+                            type="text" 
+                            placeholder="Senha"
+                            name="password" 
+                            onChange={handleInputChange}/>
+                        <input 
+                            id="ENDERECO" 
+                            type="text" 
+                            placeholder="Endereço" 
+                            name="address"
+                            onChange={handleInputChange}/>
+                        <h7>Por que ser artista no século XXI?</h7>
+                        <input 
+                            id="TXTARTE" 
+                            type="text" 
+                            name="text"
+                            onChange={handleInputChange}/>
+        */
+
+
+
+   <img src="https://lh3.googleusercontent.com/1RmejjyT79K_ytONlD3kY_ZSp3TAP9ZNXiKG4AKC_8NPMeJmkY9hGVazBQzYDs71IJ_mLiIyq4welvK1jsQudI0GPlY1Iajn_hWK0HoFCbmXPvFZkJde2tsICletBVU_9EiipHQ0VrQi3XNCwuD5hRd5qNxfWL5o8KSivSkt9kfrWQ4FP5omodUzk2m1bp_XaBbrfVC6tm-4L15DmbfGX9j7cqva6jwcCTdySJpmv_ikddW_cITiAKVfkFNj9KDmlPeFaVXYMLsnndhNXOVT7uQkEUnVggHVcvP8IjuaK9BxQqp7d8Nvqv0efODjHklj0-WBfgtsQJJ-0rKEHVOFjJrcbdBoHR6FqehGByDdvO8Hn3IiU-nqPtHAXJukuuSqgUL1OvBWtUZA_kQXQNeYcD8qRzo2MYWNvpKUmCurca7PZHUTRYEB406_mtA1lQyFtC51HubKJmWfEOmOVSrTUprn5133wzS2w4l3Ik4rRwiOguZhoHCeS5FsNu9fgJM5WCwaLTOC1ZObuhfxqBynQyLj_NQhN5TPdLm9lnEelpkaMZvVjx370v6B8OkGyU0vhTYmZLxrpzecP4A9b6t5OR1cFIsHiOB5jnAvZuAQ-in35bmu0SD60-a1fDTp7uxLRyNZv8lHN0dCu6hU2MCYyaQrrN0rPVbGQ8IzdH38kMVYR1-XfiuBDoSmzhpTXZ14qFLr3iqRYKj965TBO0I3RHI=w822-h435-no?authuser=0" alt="Digital Art Cadastro"/>
+
+.containercadastro img{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    height: 200px;
+    position: relative;
+}

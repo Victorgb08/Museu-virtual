@@ -1,0 +1,62 @@
+.containercadastro{
+    display: flex;
+    flex-direction: column;
+    max-width: 423px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px; 
+    flex-grow: 1;
+    position: relative;
+}
+
+.basecadastro{
+    height: 100%;
+    width: auto;
+    
+    align-items: center;
+    justify-content: center;
+    
+    max-width: 100%;
+   
+    position: relative;
+    display: inline;
+    
+}
+
+.paicadastro img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+}
+
+.inputscadastro{
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-block-start: 16px;
+    position: relative;
+}
+
+.paicadastro {
+    justify-content: center;
+    position: absolute;
+   
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    
+    position: absolute;
+}
+
+.titulocadastro{
+    font-size: 400%;
+    font-family: 'Courier New';
+    font-style: italic;
+    /*Font weiht é a borda da letra e negrito*/
+    font-weight: 900;
+}
