@@ -26,11 +26,12 @@
 .base img {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 10;
     width: 100%;
     height: auto;
     opacity: 0.6;
 }
 
-
-
+.cadastroButton {
+    margin-top: 10px;
+}
