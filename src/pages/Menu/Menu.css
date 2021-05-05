@@ -1,0 +1,18 @@
+.list{
+    width: 220px;
+}
+
+.listItemText{
+    color: #343434;
+    margin-left: 16px;
+}
+
+.Nome{
+    margin-right: 5px;
+}
+
+.Usuario{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
