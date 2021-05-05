@@ -6,6 +6,7 @@ function Home(){
     const history=useHistory();
 
     return (
+    <>
         <div>
             <h1>Login</h1>
             <Link to="cadastro">Cadastro</Link>
@@ -25,7 +26,8 @@ function Home(){
             >
                 Pinturas
             </button>
-        </div>            
+        </div>
+    </>          
         );
 }
 
