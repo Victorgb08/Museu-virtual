@@ -2,72 +2,63 @@ import React from "react";
 import "./Footer.css";
 import {FaFacebook} from "react-icons/fa";
 import {IconButton} from "@material-ui/core"
+import {Link} from "react-router-dom";
 function Footer(){
     return(
         <footer class="footer">
-            <div className="back_footer">
-                <section className="icons_footer">
-                    <div>
-                        <img className="image_footer" src="/images/monalisa.png" width="80%" height="100%" alt="mona"/>
-                    </div>
-                    <div className="linha_vertical"/>
-                    <p className="userName_footer">
-                    O local onde a sua arte tem valor!!
-                    </p>
-                    <div className="icons_redes">
-                        <a class="btn btn-outline-light btn-floating m-1" href="google.com" role="button">
-                            <IconButton >
-                                <FaFacebook/>
-                            </IconButton>  
-                        </a>
-                    </div>
-                </section>
-                <section className="linha"/>
-                <section>
-                <div className="guia_footer">
-                
-                    <div className="base_footer">
-                        <h5 class="text-uppercase">História</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                            <a href="http://localhost:3000/home" class="text-white">Quem somos?</a>
-                            </li>
-                            <li>
-                            <a href="#!" class="text-white">Objetivo</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="base_footer">
-                        <h5 class="text-uppercase">Contate-nos</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                            <a href="#!" class="text-white">Perguntas frequentes</a>
-                            </li>
-                            <li>
-                            <a href="#!" class="text-white">contato</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="base_footer">
-                        <h5 class="text-uppercase">Acesse</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                            <a href="#!" class="text-white">Home</a>
-                            </li>
-                            <li>
-                            <a href="#!" class="text-white">Cadastro</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="frase">
-                        <p>
-                            "A arte está em todo lugar para aqueles que enxergam a vida com amor."
-                        </p>
-                    </div>
-                    
-                </div>
-                </section>
+            <img src="https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" width="80%" height="60%"/> 
+            <section>
+            <div className="image_footer">
+                <img  src="/images/monalisa.png" width="20%" height="60%" alt="mona"/>
             </div>
+            <p className="userName_footer">
+            O local onde a sua arte tem valor!!
+            </p>
+            <div className="icons_redes">
+                <a class="btn btn-outline-light btn-floating m-1" href="google.com" role="button">
+                    <IconButton >
+                        <FaFacebook/>
+                    </IconButton>  
+                </a>
+            </div>
+            </section>
+            <section>
+            <div className="guia_footer">
+            
+                <div className="base_footer">
+                    <div className="link_footer_historia">
+                        <Link to="login">
+                            Quem somos?
+                        </Link>
+                        <Link  to="login">
+                            objetivo
+                        </Link>
+                    </div>
+                    <div className="link_footer_contato">
+                        <Link className="link_footer" to="login">
+                            Perguntas frequentes?
+                        </Link>
+                        <Link  to="login">
+                            contato
+                        </Link>
+                    </div>
+                    <div className="link_footer_paginas">
+                        <Link  to="home">
+                            Home
+                        </Link>
+                        <Link  to="cadastro">
+                            Cadastro
+                        </Link>
+                    </div>
+                </div>
+                <div className="frase">
+                    <p>
+                        "A arte está em todo lugar para aqueles que enxergam a vida com amor."
+                    </p>
+                </div>
+                
+            </div>
+            </section>
         </footer>
     
     );
