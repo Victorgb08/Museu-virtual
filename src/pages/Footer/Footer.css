@@ -1,0 +1,71 @@
+.footer {
+    color:black;
+    padding: 25px;
+    position: relative;
+}
+.icons_footer{
+    display: flex;
+}
+.image_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    padding-right:0;
+}
+.linha{
+    width: 100;
+    border: 1px solid;
+    color:black;
+    margin-top:5px
+}
+.linha_vertical{
+    height: 100px;
+    border-right: 1px solid white ;
+    margin-top:25px;
+}
+.userName_footer{
+    display: flex;
+    align-items: center;
+    margin:0;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    max-width: 200px;
+    font-family: 'Girassol', cursive;
+    font-size: 25px;
+    color:rgb(0, 0, 0);
+}
+.icons_redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+.guia_footer{
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+.frase{
+    font-family: 'Girassol', cursive;
+    font-size: 40px;
+    color:rgb(44, 17, 17);
+    max-width: 750px;
+    margin-left: auto;
+}
+.base_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.back_footer{
+    background-image: url("https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    background-size:cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
