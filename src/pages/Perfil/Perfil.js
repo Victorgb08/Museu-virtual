@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./Perfil.css"
 import { Avatar, Drawer, IconButton, Link, List } from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
-import Carousel from "react-bootstrap/Carousel"
+//import Carousel from "react-bootstrap/Carousel"
 import {Button, Form} from "react-bootstrap"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function Perfil(){
 
@@ -82,27 +84,19 @@ function Perfil(){
                     <h1>Nome do Usuário</h1>
                     <br/><h1>Informações</h1>
                     </div>
-                    <Carousel className="carrossel">
-                        <Carousel.Item className="item1">
+                    <Carousel className="carrossel" interval="5" autoPlay="true">
+                        <div>
                             <img
-                            className="carrossel1"
-                            src="https://images.pexels.com/photos/1762973/pexels-photo-1762973.jpeg?cs=srgb&dl=pexels-suzy-hazelwood-1762973.jpg&fm=jpg"
-                            alt="First slide"
+                                src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?cs=srgb&dl=pexels-pixabay-532263.jpg&fm=jpg"
+                                alt="imagem aleatoria"
                             />
-                            <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item className="item2">
+                        </div>
+                        <div>
                             <img
-                            className="carrossel2"
-                            src="https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?cs=srgb&dl=pexels-steve-johnson-1509534.jpg&fm=jpg"
-                            alt="First slide"
+                                src="https://i.pinimg.com/564x/a8/44/05/a84405d543a674d448c64ac57f25a74a.jpg"
+                                alt="imagem aleatoria"
                             />
-                            <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
+                        </div>
                     </Carousel>
                 </div>
             </div>
