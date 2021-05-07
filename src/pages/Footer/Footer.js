@@ -5,17 +5,20 @@ import {IconButton} from "@material-ui/core"
 import {Link} from "react-router-dom";
 function Footer(){
     return(
-        <footer class="footer">
-            <img src="https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" width="80%" height="60%"/> 
+        <footer className="footer_ct">
+            {/* <img className="footer_ct_img" src="/images/roma.png" width="auto" heigth="auto"/>  */}
             <section>
             <div className="image_footer">
-                <img  src="/images/monalisa.png" width="20%" height="60%" alt="mona"/>
+                <img  src="/images/artone.png" width="11%" height="auto" alt="art"/>
             </div>
-            <p className="userName_footer">
-            O local onde a sua arte tem valor!!
-            </p>
+            <div className="vertical_footer"/>
+            <div className="userName_footer">
+                <p>
+                    O local onde a sua arte tem valor!!
+                </p>
+            </div>
             <div className="icons_redes">
-                <a class="btn btn-outline-light btn-floating m-1" href="google.com" role="button">
+                <a href="https://www.google.com" role="button">
                     <IconButton >
                         <FaFacebook/>
                     </IconButton>  
@@ -26,30 +29,25 @@ function Footer(){
             <div className="guia_footer">
             
                 <div className="base_footer">
-                    <div className="link_footer_historia">
-                        <Link to="login">
-                            Quem somos?
-                        </Link>
-                        <Link  to="login">
-                            objetivo
-                        </Link>
-                    </div>
-                    <div className="link_footer_contato">
-                        <Link className="link_footer" to="login">
-                            Perguntas frequentes?
-                        </Link>
-                        <Link  to="login">
-                            contato
-                        </Link>
-                    </div>
-                    <div className="link_footer_paginas">
-                        <Link  to="home">
-                            Home
-                        </Link>
-                        <Link  to="cadastro">
-                            Cadastro
-                        </Link>
-                    </div>
+                    <Link className="link_footer" to="login">
+                        Quem somos?
+                    </Link>
+                    <Link className="link_footer" to="login">
+                        Objetivo
+                    </Link>
+                    <Link className="link_footer" to="login">
+                        Perguntas frequentes?
+                    </Link>
+                    <Link className="link_footer"  to="login">
+                        Contato
+                    </Link>
+                    <Link className="link_footer"  to="home">
+                        Home
+                    </Link>
+                    <Link className="link_footer"  to="cadastro">
+                        Cadastro
+                    </Link>
+
                 </div>
                 <div className="frase">
                     <p>
