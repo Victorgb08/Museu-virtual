@@ -29,6 +29,13 @@ const useStylesimg = makeStyles((theme) => ({
       overflow: 'hidden',
       position: 'relative',
     },
+    gridList: {
+      width: 900,
+      height: 450,
+    },
+    icon: {
+      color: 'rgba(255, 255, 255, 0.54)',
+    },
   }));
 
 function Pinturas(){
@@ -43,22 +50,22 @@ function Pinturas(){
                 <InputLabel htmlFor="grouped-native-select">ESTILOS</InputLabel>
                 <Select native defaultValue="" id="grouped-native-select">
                     <option aria-label="None" value={0} />
-                    <option value={1}>Futurismo</option>
-                    <option value={2}>Cubismo</option>
-                    <option value={3}>Expressionismo</option>
-                    <option value={4}>Surrealismo</option>
+                    <option value={1}>Futurista</option>
+                    <option value={2}>Cubista</option>
+                    <option value={3}>Expressionista</option>
+                    <option value={4}>Surrealista</option>
                 </Select>
                 </FormControl>
                 <div className={classesimg.root}>
-                    <Box sx={{ width: 1300, height: 500, overflowY: 'scroll' }}>
-                        <ImageList variant="masonry" cols={4} gap={12}>
+                    <Box sx={{ width: 500, height: 450, overflowY: 'scroll' }}>
+                        <ImageList variant="masonry" cols={3} gap={8}>
                             {pinturas.map((pintura) => (
                             <ImageListItem key={pintura.img}>
                                 <img
-                                    srcSet={`${pintura.img}?w=161&fit=crop&auto=format 1x,
+                                srcSet={`${pintura.img}?w=161&fit=crop&auto=format 1x,
                                     ${pintura.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                                    alt={pintura.titulo}
-                                    loading="lazy"
+                                alt={pintura.titulo}
+                                loading="lazy"
                                 />
                                 <ImageListItemBar position="below" title={pintura.autor} />
                             </ImageListItem>
