@@ -3,7 +3,7 @@ import {useState} from "react";
 import {useHistory} from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import "./Cadastro.css";
-import { MdHome } from "react-icons/md";
+import { ImHome } from "react-icons/im";
 import Footer from "../Footer"
 
 
@@ -26,15 +26,20 @@ function Cadastro(){
         // passa para a variavel que vai armazenar tudo mesmo
         setMembro(newMembro);
         // console.log(newMembro);
+        // <img src="https://cdn.pixabay.com/photo/2017/09/05/22/58/background-2719560_960_720.jpg " alt="Paleta"/>
+
     }
-    return(
-        <>
-            <div className="paicadastro">
-                <img src="https://cdn.pixabay.com/photo/2017/09/05/22/58/background-2719560_960_720.jpg " alt="Paleta"/>
-                <div className="basecadastro">  
-                <Button variant="danger" onClick={cadastro} className="botaohome">
+
+    /*Embaixo do div com className basecadastro estava o botão de home
+        <Button variant="danger" onClick={cadastro} className="botaohome">
                     <MdHome/> 
                 </Button>
+    */
+    return(
+        <div className="FundoTelaCadastro">
+            <div className="paicadastro">
+                <div className="basecadastro">  
+                
                     
                     <div className="containercadastro">
                         <Form>
@@ -60,6 +65,9 @@ function Cadastro(){
                                 <Button variant="danger" type="submit" onClick={cadastro}>
                                     Cadastre-se
                                 </Button>
+                                <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
+                                    <ImHome style={{height: "25px", width: "25px"}}/>
+                                </Button>
                             </div>
                             
                         </Form>
@@ -68,7 +76,7 @@ function Cadastro(){
                 </div> 
                 <Footer/>
             </div>
-        </>
+        </div>
         
     )
 }
