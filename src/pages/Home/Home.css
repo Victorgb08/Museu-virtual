@@ -1,0 +1,52 @@
+.backgroundHome {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  background-color: rgb(107, 102, 102);
+  align-items: center;
+}
+.carrosselArts {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 20px;
+}
+.artsMuseu {
+  display: flex;
+  flex-direction: column;
+}
+.conteiner1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  border-radius: 90px;
+  background-color: rgb(87, 59, 64);
+  align-items: center;
+}
+.style1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  color: white;
+}
+.conteiner2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 90px;
+  background-color: rgb(87, 59, 64);
+  align-items: center;
+}
+.style2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 25px;
+}
+

@@ -1,16 +1,18 @@
 .conteiner {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 300px;
     flex-grow: 1;
 }
 
 .base {
-    height: 100%;
+    height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
+    max-width: auto;
    
 }
 
@@ -19,7 +21,7 @@
    margin-left: 32px;
    margin-right: 32px;
    flex-direction: column;
-   margin-top: 100px; 
+   margin-top: 500px;
    position: relative;
 }
 
