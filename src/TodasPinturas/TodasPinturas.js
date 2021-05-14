@@ -1,6 +1,7 @@
 const pinturas = [
     {
-        cols: 1,
+        cols: 3,
+        rows: 3,
         id: "1",
         titulo: "O grito",
         ano: "1893",
@@ -11,7 +12,8 @@ const pinturas = [
         objetivo: "Na tela vemos um protagonista em desespero, em cima de uma ponte, lutando com os sentimentos de solidão, ansiedade e medo, tão explorados pelos expressionistas, que buscavam revelar um lado sombrio e inquietante da existência humana.",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "2",
         titulo: "O cavaleiro azul",
         ano: "1903",
@@ -22,7 +24,8 @@ const pinturas = [
         objetivo: "A composição registra um cavalheiro em ação a partir de uma imagem propositalmente esfumada. Aqui a cena está ligada à ação e ao gesto pleno de energia, que é reforçado também a partir das pinceladas curtas.",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "3",
         titulo: "Retirantes",
         ano: "1944",
@@ -33,7 +36,8 @@ const pinturas = [
         objetivo: "Na obra Retirantes, por exemplo, temos o retrato uma família de emigrantes vítima da fome e do desespero. Pintado em cores escuras, o quadro se destaca pelo seu tom sinistro e desesperador, com rostos que clamam por ajuda, bem ao estilo expressionista.",
     },
     {
-        cols: 1,
+        cols: 3,
+        rows: 2,
         id: "4",
         titulo: "A Menina Doente",
         ano: "1885",
@@ -44,7 +48,8 @@ const pinturas = [
         objetivo: "Momento anterior a morte da irmã mais velha de Edvard Munch, Johanne Sophie  vítima de tuberculose aos 15 anos de idade. Sophie é tipicamente apresentada em seu leito de morte acompanhada por uma aflita mulher de cabelos escuros, que acredita-se ser sua tia Karen",
     },
     {
-        cols: 1,
+        cols: 3,
+        rows: 2,
         id: "5",
         titulo: "Desespero",
         ano: "1892",
@@ -55,7 +60,8 @@ const pinturas = [
         objetivo: "Preparação para o Grito (Nao é esse o obj)",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "6",
         titulo: "Abaporu",
         ano: "1928",
@@ -66,7 +72,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 1,
+        cols: 3,
+        rows: 3,
         id: "7",
         titulo: "A Boba",
         ano: "1915",
@@ -77,7 +84,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "8",
         titulo: "O Dinamismo de um Automóvel",
         ano: "1912",
@@ -88,7 +96,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "9",
         titulo: "Dinamismo de Um Cão na Coleira",
         ano: "1912",
@@ -99,7 +108,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 3,
+        cols: 6,
+        rows: 2,
         id: "10",
         titulo: "Guernica",
         ano: "1937",
@@ -110,7 +120,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "11",
         titulo: "As senhoritas de Avignon",
         ano: "1907",
@@ -121,7 +132,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "12",
         titulo: "Persistência da memória",
         ano: "1931",
@@ -133,6 +145,7 @@ const pinturas = [
     },
     {
         cols: 2,
+        rows: 1,
         id: "13",
         titulo: "A traição das imagens",
         ano: "René Magritte",
@@ -143,7 +156,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 2,
+        cols: 3,
+        rows: 2,
         id: "14",
         titulo: "As duas Fridas",
         ano: "1939",
@@ -154,7 +168,8 @@ const pinturas = [
         objetivo: "WIP",
     },
     {
-        cols: 1,
+        cols: 2,
+        rows: 2,
         id: "15",
         titulo: "UNS TREM AI",
         ano: "2999",
@@ -163,7 +178,7 @@ const pinturas = [
         estilo: "cubismo",
         idestilo: 2,
         objetivo: "WIP",
-    },
+    }
 ]
 
 export default pinturas

@@ -6,6 +6,7 @@ import "./Home.css";
 import { useHistory } from "react-router";
 import { Typography } from "@material-ui/core";
 
+
 const pinturas = [
   {
     id: 1,
@@ -32,6 +33,7 @@ const pinturas = [
     alt: "Fourth slide",
   },
 ];
+
 
 function Home() {
   var [dia, setDia] = useState();

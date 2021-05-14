@@ -1,73 +1,63 @@
-import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Box from '@material-ui/core/Box';
+import React, {useState} from "react";
+import pinturas from '../../TodasPinturas/TodasPinturas'
+import "./Pinturas.css";
+import {Select,MenuItem} from '@material-ui/core';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
-import pinturas from '../../TodasPinturas/TodasPinturas'
-import "./Pinturas.css";
-
-
-
-//esse é do botao de seleção
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
-    },
-  }));
-
-//esse é da imagem
-const useStylesimg = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      overflow: 'hidden',
-      position: 'relative',
-    },
-  }));
+import IconButton from '@material-ui/core/IconButton';
+import InfoIcon from '@material-ui/icons/Info';
 
 function Pinturas(){
-    const classes = useStyles();
-    const classesimg = useStylesimg();
-    
 
-    return (
-    <div className = "FundoPinturas">
-            <div>
-                <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="grouped-native-select">ESTILOS</InputLabel>
-                <Select native defaultValue="" id="grouped-native-select">
-                    <option aria-label="None" value={0} />
-                    <option value={1}>Futurismo</option>
-                    <option value={2}>Cubismo</option>
-                    <option value={3}>Expressionismo</option>
-                    <option value={4}>Surrealismo</option>
-                </Select>
-                </FormControl>
-                <div className={classesimg.root}>
-                    <Box sx={{ width: 1300, height: 500, overflowY: 'scroll' }}>
-                        <ImageList variant="masonry" cols={4} gap={12}>
-                            {pinturas.map((pintura) => (
-                            <ImageListItem key={pintura.img}>
-                                <img
-                                    srcSet={`${pintura.img}?w=161&fit=crop&auto=format 1x,
-                                    ${pintura.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                                    alt={pintura.titulo}
-                                    loading="lazy"
-                                />
-                                <ImageListItemBar position="below" title={pintura.autor} />
-                            </ImageListItem>
-                            ))}
-                        </ImageList>
-                    </Box>
-                </div>
-            </div>
-    </div>    
+    const [categoria, setCategoria] = useState("all");
+    const updateSelectCateg=(e)=>{
+        console.log(e.target.value)
+        setCategoria(e.target.value)
+    };
+    const all = "all";
+
+    return (         
+        <div className="PaiPinturas">
+            <Select value={categoria} displayEmpty onChange={updateSelectCateg}>
+                <MenuItem value="" disabled >Selecione uma Categoria</MenuItem>
+                    <MenuItem value="all">Todas as Pinturas</MenuItem>
+                    <MenuItem value="surrealismo">surrealismo</MenuItem>
+                    <MenuItem value="cubismo" >cubismo</MenuItem>
+                    <MenuItem value="futurismo" >futurismo</MenuItem>
+                    <MenuItem value="expressionismo" >expressionismo</MenuItem>
+            </Select>
+            <div className="teste">
+                <ImageList sx={{width: "90vw", height: "90vh"}} variant="quilted" cols={6} gap={8}>
+                    {pinturas.filter(todaspinturas => todaspinturas.estilo === categoria || all === categoria).map(imagensfiltradas => (
+                        <ImageListItem key={imagensfiltradas.img} cols={imagensfiltradas.cols} rows={imagensfiltradas.rows}>
+                            <img
+                                srcSet={imagensfiltradas.img}
+                                alt={imagensfiltradas.titulo}
+                            />
+                            <ImageListItemBar
+                                sx={{background:
+                                    'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                                    'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                            }}
+                            title={imagensfiltradas.titulo}
+                            position="top"
+                            actionIcon={
+                                <IconButton
+                                    sx={{color: 'white' }}
+                                    arial-label={`info about ${imagensfiltradas.titulo}`}
+                                >
+                                    <InfoIcon />
+                                </IconButton>
+                            }
+                            actionPosition="left"
+                            />
+                        </ImageListItem>
+                    ))}
+                </ImageList>   
+            </div>  
+        </div>
+                
     );
 }
 
