@@ -8,6 +8,7 @@ import Perfil from "./pages/Perfil";
 import MaisComentadas from "./pages/MaisComentadas";
 import Footer from "./pages/Footer";
 import Menu from "./pages/Menu";
+import Historia from "./pages/Historia"
 
 
 function Routes(){
@@ -16,9 +17,9 @@ function Routes(){
             <Switch>
                 <Route exact path="/login" component={Login}/>
                 <Route path="/cadastro" component={Cadastro}/>
-                <Route path="/pinturas" component={Pinturas}/>
+                
                 <Route path="/perfil" component={Perfil}/>
-                <Route path="/maiscomentadas" component={MaisComentadas}/>
+                
                 <Route path="/footer" component={Footer}/>
                 <Route path="/" component={UserMenu}/>
             </Switch>
@@ -31,6 +32,9 @@ function UserMenu(){
         <Menu>
             <Switch>
                 <Route path="/home" component={Home}/>
+                <Route path="/pinturas" component={Pinturas}/>
+                <Route path="/maiscomentadas" component={MaisComentadas}/>
+                <Route path="/historia" component={Historia}/>
                 <Route component={()=><Redirect to="/login" />}/>
             </Switch>
         </Menu>

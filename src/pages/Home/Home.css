@@ -1,0 +1,103 @@
+.backgroundHome {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  background-color: rgba(179, 194, 243, 0.911);
+  align-items: center;
+}
+.carrosselArts {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 5%;
+}
+.artsMuseu {
+  display: flex;
+  flex-direction: column;
+}
+.ImageDia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  border-top: 2px solid black;
+  background-image: url("https://cdn.pixabay.com/photo/2016/06/02/02/35/mesh-1430107_960_720.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ImageTarde {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  border-top: 2px solid black;
+  background-image: url("https://image.freepik.com/vetores-gratis/formas-poligonais-coloridas-para-um-fundo-geometrico_1035-19010.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ImageNoite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  border-top: 2px solid black;
+  background-image: url("https://image.freepik.com/fotos-gratis/poligono-baixo-do-triangulo-cinza-poligonal-triangular-geometrico-cinza-fundo-abstrato-do-mosaico-ilustracao-de-renderizacao-3d_51464-607.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.textDia {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  font-size: clamp(1.5em, 5.5em + 1vw, 3.5em);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  
+}
+.textTarde {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  font-size: clamp(1.5em, 5.5em + 1vw, 3.5em);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+.textNoite {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  font-size: clamp(1.5em, 5.5em + 1vw, 3.5em);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+.BorderLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10px;
+  width: 60%;
+  margin-top: 8%;
+  background-color: rgb(116, 113, 113);
+  border-radius: 20px;
+}
+.BorderLineText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10px;
+  width: 83%;
+  margin-top: 5%;
+  background-color: rgb(116, 113, 113);
+  border-radius: 20px;
+ 
+}
+.textHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  max-width: 80%;
+  margin-top: 3%;
+  font-size: clamp(1.5em, 5.5em + 1vw, 3.5em);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}

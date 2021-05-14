@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Perfil.css"
-import { Avatar, Drawer, IconButton, List } from "@material-ui/core";
+import { Avatar, Drawer, IconButton, Link, List, Typography } from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
-import Carousel from "react-bootstrap/Carousel"
+//import Carousel from "react-bootstrap/Carousel"
 import {Button, Form} from "react-bootstrap"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function Perfil(){
 
@@ -27,7 +29,12 @@ function Perfil(){
     }
 
     return (
-            <div className="total">
+            <div className="total_perfil">
+                {/*<img
+                    className="imagem_de_fundo"
+                    src="https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg"
+                    alt="Imagem de fundo"
+                />*/}
                 <Drawer open={ open } onClose={()=> handleDrawer(false)} anchor="right">
                     <List>
                         <Form>
@@ -58,44 +65,43 @@ function Perfil(){
                     </List>
                 </Drawer>
                     <div className="header">
-                        <div className="botao">
-                        Configurações da Conta
-                            <IconButton label="Configurações da conta" color="default"  aria-label="editar os dados" className="botao" style={{width:"50px"}} onClick={()=> handleDrawer(!open)}>
+                        <div className="botao" >
+                        <Link
+                            component="button"
+                            color="black"
+                            onClick={()=> handleDrawer(!open)}
+                            >
+                            Configurações da Conta
+                        </Link>
+                            <IconButton label="Configurações da conta" color="black"  aria-label="editar os dados" className="botao" style={{width:"50px"}} onClick={()=> handleDrawer(!open)} >
                                 <SettingsIcon/>
                             </IconButton>
                         </div>
                     </div>
                 <div className="container_perfil" >
                     <div className="avatar_nome">
-                    <Avatar alt="Avatar Aleatório" src="/images/imagem.jpeg" style={{ height: '200px', width: '200px'}}/>
-                    <h1>Nome do Usuário</h1>
-                    <br/><h1>Informações</h1>
+                    <Avatar alt="Avatar Aleatório" src="https://i.pinimg.com/564x/a8/44/05/a84405d543a674d448c64ac57f25a74a.jpg" style={{ height: '200px', width: '200px'}}/>
+                    <div className="textosPerfil">
+                    <Typography variant="h4" className="nomeUsuario">Nome do Usuário</Typography>
+                    <Typography variant="h5" className="infosPerfil">Informações</Typography>
                     </div>
-                    <Carousel className="carrossel">
-                        <Carousel.Item className="item1">
+                    </div>
+                    <Carousel className="carrossel" dynamicHeight="true" infiniteLoop="true" autoPlay="true" interval="2500">
+                        <div>
                             <img
-                            className="carrossel1"
-                            src="https://images.pexels.com/photos/1762973/pexels-photo-1762973.jpeg?cs=srgb&dl=pexels-suzy-hazelwood-1762973.jpg&fm=jpg"
-                            alt="First slide"
+                                src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?cs=srgb&dl=pexels-pixabay-532263.jpg&fm=jpg"
+                                alt="imagem aleatoria"
                             />
-                            <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item className="item2">
+                        </div>
+                        <div>
                             <img
-                            className="carrossel2"
-                            src="https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?cs=srgb&dl=pexels-steve-johnson-1509534.jpg&fm=jpg"
-                            alt="First slide"
+                                src="https://i.pinimg.com/564x/a8/44/05/a84405d543a674d448c64ac57f25a74a.jpg"
+                                alt="imagem aleatoria"
                             />
-                            <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
+                        </div>
                     </Carousel>
                 </div>
+                
             </div>
     );
 }

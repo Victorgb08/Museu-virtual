@@ -1,0 +1,48 @@
+.base_historia{
+    font-family: 'Fjalla One', sans-serif;
+    opacity: initial;
+}
+.back_his{
+    height: 200vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,.4)),url("https://images.pexels.com/photos/7505204/pexels-photo-7505204.jpeg?cs=srgb&dl=pexels-valeriya-kobzar-7505204.jpg&fm=jpg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position-x: center;
+    background-position-y:center;
+    color: white;
+    text-align: center;
+}
+.frase_tit{
+    color: black;
+    border-bottom:1px solid grey;
+    position: relative;
+    opacity: initial;
+    font-family: 'Pacifico', cursive;
+}
+.tit_his{
+    font-size:clamp(15px,48px,70px);
+    font-family: 'Prompt', sans-serif;
+    color:red;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+.his{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    padding:0 50px 0 50px;
+}
+.icons_his{
+    display: flex;
+    flex-direction: column;
+}
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+/* @media only screen and (max-width:400px) {
+    *{
+        background-color:black;
+        font-size: 150px;
+    }
+} */

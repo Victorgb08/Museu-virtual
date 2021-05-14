@@ -7,7 +7,7 @@
     margin-right: auto;
     margin-top: 100px; 
     flex-grow: 1;
-    position: relative;
+    /*position: relative;*/
 }
 
 .basecadastro{
@@ -19,11 +19,11 @@
     
     max-width: 100%;
    
-    position: relative;
+    /*position: relative;*/
     display: inline;
     
 }
-
+/*
 .paicadastro img {
     position: absolute;
     left: 0;
@@ -32,14 +32,15 @@
     height: auto;
     opacity: 0.6;
 }
-
+*/
 .inputscadastro{
     display: flex;
     flex-direction: column;
     margin-left: 16px;
     margin-right: 16px;
     margin-block-start: 16px;
-    position: relative;
+    margin-bottom: 118px;
+   /* position: relative; */
 }
 
 .paicadastro {
@@ -49,8 +50,6 @@
     flex-grow: 1;
     height: 100%;
     width: 100%;
-    
-    position: absolute;
 }
 
 .titulocadastro{
@@ -59,4 +58,12 @@
     font-style: italic;
     /*Font weiht é a borda da letra e negrito*/
     font-weight: 900;
+}
+
+.FundoTelaCadastro {
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://cdn.pixabay.com/photo/2017/08/27/23/11/background-2687925_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 140%;
+    width: 140%;
 }

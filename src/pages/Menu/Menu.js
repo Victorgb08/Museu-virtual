@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from "react";
+import React from "react";
 import { Avatar, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography} from "@material-ui/core";
 import { MdHome, MdFilterFrames, MdInfo } from "react-icons/md";
 import { IconContext } from "react-icons/lib";
