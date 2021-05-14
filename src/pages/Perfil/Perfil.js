@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Perfil.css"
-import { Avatar, Drawer, IconButton, Link, List } from "@material-ui/core";
+import { Avatar, Drawer, IconButton, Link, List, Typography } from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
 //import Carousel from "react-bootstrap/Carousel"
 import {Button, Form} from "react-bootstrap"
@@ -30,11 +30,11 @@ function Perfil(){
 
     return (
             <div className="total_perfil">
-                <img
+                {/*<img
                     className="imagem_de_fundo"
                     src="https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg"
                     alt="Imagem de fundo"
-                />
+                />*/}
                 <Drawer open={ open } onClose={()=> handleDrawer(false)} anchor="right">
                     <List>
                         <Form>
@@ -81,10 +81,12 @@ function Perfil(){
                 <div className="container_perfil" >
                     <div className="avatar_nome">
                     <Avatar alt="Avatar Aleatório" src="https://i.pinimg.com/564x/a8/44/05/a84405d543a674d448c64ac57f25a74a.jpg" style={{ height: '200px', width: '200px'}}/>
-                    <h1>Nome do Usuário</h1>
-                    <br/><h1>Informações</h1>
+                    <div className="textosPerfil">
+                    <Typography variant="h4" className="nomeUsuario">Nome do Usuário</Typography>
+                    <Typography variant="h5" className="infosPerfil">Informações</Typography>
                     </div>
-                    <Carousel className="carrossel" interval="5" autoPlay="true">
+                    </div>
+                    <Carousel className="carrossel" dynamicHeight="true" infiniteLoop="true" autoPlay="true" interval="2500">
                         <div>
                             <img
                                 src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?cs=srgb&dl=pexels-pixabay-532263.jpg&fm=jpg"
@@ -99,6 +101,7 @@ function Perfil(){
                         </div>
                     </Carousel>
                 </div>
+                
             </div>
     );
 }

@@ -1,25 +1,13 @@
+
 .total_perfil {
-    height:100%;
-    width: 100%;
-    z-index: 1;
-}
-
-.imagem_de_fundo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.68;
-}
-
-.container_perfil {
     display: flex;
     flex-direction: column;
-    align-self: center;
-    justify-self: center;
-    z-index: 0;
-    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
 }
 
 .header {
@@ -31,27 +19,57 @@
     position: relative;
 }
 
-.titulo {
-    display: flex;
-    margin-left: auto;
-}
-
 .botao {
     margin-left: auto;
 }
 
-.carrossel {
-    height: 300px;
-    width: 300px;
-    margin-top: 100px;
+.container_perfil {
+    display: flex;
+    flex-direction: column;
     align-self: center;
-    align-content: center;
+    justify-self: center;
+    z-index: 0;
+    position: relative;
 }
-
 
 .avatar_nome {
     display: flex;
     align-self: center;
     flex-direction: column;
     align-items: center;
+}
+
+.textosPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel {
+    width: 200px;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 450px){
+    .header {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        position: relative;
+        font-size: 0.75em;
+    }
+    .container_perfil {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        z-index: 0;
+        position: relative;
+    }
 }
