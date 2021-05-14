@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer";
 import "./Home.css";
 import { useHistory } from "react-router";
+import { Typography } from "@material-ui/core";
 
 const pinturas = [
   {
@@ -33,38 +34,84 @@ const pinturas = [
 ];
 
 function Home() {
-  //const history = useHistory();
+  var [dia, setDia] = useState();
+  useEffect(() => {
+    if (12 >= new Date().getHours() >= 1) {
+      setDia("manha");
+    } else if (17 >= new Date().getHours() >= 12) {
+      setDia("tarde");
+    } else if(0 >= new Date().getHours() >= 18){
+      setDia("noite");
+    }
+  }, []);
+
+  function setBackground() {
+    if (dia === "manha") {
+      return (
+        <div className="ImageDia">
+          <div className="textDia">
+            <h0> Bom dia Usuário </h0>
+          </div>
+        </div>
+      );
+    } else if (dia === "tarde") {
+      return (
+        <div className="ImageTarde">
+          <div className="textDia">
+            <h0> Boa tarde Usuário </h0>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="ImageNoite">
+          <div className="textDia">
+            <h0> Boa noite Usuário </h0>
+          </div>
+        </div>
+      );
+    }
+  }
 
   return (
     <>
       <div className="backgroundHome">
-          <div className="conteiner1">
-            <p className="style1">
-              <h3>O que te move a fazer arte?</h3>
-              <h3> Compartilhe a sua arte no Arte One: onde sua arte tem valor.</h3>
-            </p>
-          </div>
+        {setBackground()}
+        <div className="BorderLine" />
+        <Carousel
+          className="carrosselArts"
+          autoPlay="true"
+          dynamicHeight="true"
+          infiniteLoop="true"
+        >
+          {pinturas.map((artes) => (
+            <div className="artsMuseu">
+              <img name={artes.name} src={artes.src} alt={artes.alt} />
+            </div>
+          ))}
+        </Carousel>
 
-          <div className="conteiner2">
-            <p className="style2">
-              <h3>As artes mais curtidas</h3>
-            </p>
-          </div>
-
-          <Carousel
-            className="carrosselArts"
-            autoPlay="true"
-            dynamicHeight="true"
-            onClickItem
-          >
-            {pinturas.map((artes) => (
-              <div className="artsMuseu">
-                <img name={artes.name} src={artes.src} alt={artes.alt} />
-              </div>
-            ))}
-          </Carousel>
-          <Footer />
-        </div>
+        <div className="BorderLineText" />
+        <p />
+        <Typography className="textHome">
+          <h1>O que é a Art One?</h1>
+          <p />
+          <p />
+          <h3>
+            Essa é a Art One, a plataforma para que você pintor amador possa
+            compartilhar suas obras e conhecer vários outros artistas do ramo.
+            Aqui valorizamos e reconhecemos todas as formas de arte expressas
+            por um pincel. Nesse sentido, buscamos unir a comunidade artística
+            em um meio de simples uso, de diversidade de obras e colaboração. É
+            essencial para a arte a colaboração entre aqueles que a praticam,
+            aqui na Digital Art permitimos que sua pintura seja compartilhada,
+            conhecida e valorizada com deve ser.
+          </h3>
+          <p />
+          <p />
+        </Typography>
+        <Footer />
+      </div>
     </>
   );
 }
