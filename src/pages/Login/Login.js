@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { ImHome } from "react-icons/im";
 import { useHistory } from "react-router-dom";
+import Footer from "../Footer";
 import "./Login.css";
 
 function Login() {
@@ -10,15 +11,11 @@ function Login() {
   const history = useHistory();
 
   return (
-    <>
-      <div className="base">
-        <img
-          src="https://images.pexels.com/photos/1193743/pexels-photo-1193743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="Paleta"
-        />
-        <div className="conteiner">
+    <div className="total_login">
+      <div className="base_login">
+        <div className="conteiner_login">
           <div>
-            <Form className="inputs">
+            <Form className="inputs_login">
               <Form.Group controlId="Email">
                 <Form.Control
                   type="email"
@@ -38,21 +35,23 @@ function Login() {
                 Login{" "}
               </Button>{" "}
               <Button
-                className="cadastroButton"
+                className="cadastroButton_login"
                 variant="dark"
                 onClick={() => history.push("Cadastro")}
               >
                 {" "}
                 Cadastro{" "}
               </Button>{" "}
-              <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
+              <Button className="homeButton_login" variant="outlined" color="primary" onClick={() => history.push("Home")} >
                 <ImHome style={{height: "25px", width: "25px"}}/>
               </Button>
             </Form>
           </div>
         </div>
       </div>
-    </>
+      <Footer></Footer>
+      </div>
+
   );
 }
 

@@ -1,46 +1,63 @@
-.conteiner {
+.total_login{
+    height:100vh;
+    width: 100vw;
+    overflow: auto;
+}
+
+.base_login {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: auto;
+    background:url("https://i.pinimg.com/originals/ae/ab/e5/aeabe54da1806324300ad9dba1f9c5a3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    background-position-y: center;
+    overflow: auto;
+}
+
+.conteiner_login {
     display: flex;
     flex-direction: column;
-    align-items: center;
     max-width: 300px;
     flex-grow: 1;
 }
 
-.base {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: auto;
-   
-}
 
-.inputs {
+.inputs_login {
    display: flex;
    margin-left: 32px;
    margin-right: 32px;
    flex-direction: column;
-   margin-top: 500px;
    position: relative;
 }
 
-.base img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
-}
-
-.cadastroButton {
+.cadastroButton_login {
     margin-top: 10px;
 }
 
-.homeButton {
+.homeButton_login {
    display: flex;
    margin-top: 5px;
    margin-left: 50px;
    margin-right: 50px;
+}
+
+@media only screen and (max-width:1050px){
+    .base_login {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: auto;
+        background:url("https://i.pinimg.com/originals/ae/ab/e5/aeabe54da1806324300ad9dba1f9c5a3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        overflow: auto;
+    }
+    
 }
