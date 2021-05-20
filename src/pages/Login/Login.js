@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { ImHome } from "react-icons/im";
 import { useHistory } from "react-router-dom";
-import Footer from "../Footer";
 import "./Login.css";
 
 function Login() {
@@ -49,8 +48,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <Footer></Footer>
-      </div>
+    </div>
 
   );
 }

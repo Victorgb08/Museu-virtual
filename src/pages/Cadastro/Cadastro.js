@@ -4,7 +4,6 @@ import {useHistory} from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import "./Cadastro.css";
 import { ImHome } from "react-icons/im";
-import Footer from "../Footer"
 
 
 function Cadastro(){
@@ -37,44 +36,40 @@ function Cadastro(){
     */
     return(
         <div className="FundoTelaCadastro">
-            <div className="paicadastro">
-                <div className="basecadastro">  
-                
-                    
-                    <div className="containercadastro">
-                        <Form>
-                        
-                        <h1 className = "titulocadastro"><font color="red"><b>DIGITAL ART</b></font></h1>                
-                            <div className="inputscadastro">
-                                <Form.Group controlId="Nome">
-                                    <Form.Control type="text" placeholder="Nome" name="name" onChange={handleInputChange}/>
-                                </Form.Group>
-                                <Form.Group controlId="Email">
-                                    <Form.Control type="email" placeholder="name@example.com" name="email" onChange={handleInputChange}/>
-                                </Form.Group>
-                                <Form.Group controlId="Senha">
-                                    <Form.Control type="password" placeholder="Senha" name="password" onChange={handleInputChange}/>
-                                </Form.Group>
-                                <Form.Group controlId="Endereco">    
-                                    <Form.Control type="text" placeholder="Endereço" name="address" onChange={handleInputChange}/>
-                                </Form.Group>
-                                <Form.Group controlId="TextArt">
-                                    <Form.Control as="textarea" rows={3} placeholder="Por que ser artista no século XXI?" name="text" onChange={handleInputChange}/>
-                                </Form.Group>
-                                
-                                <Button variant="danger" type="submit" onClick={cadastro}>
-                                    Cadastre-se
-                                </Button>
-                                <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
-                                    <ImHome style={{height: "25px", width: "25px"}}/>
-                                </Button>
-                            </div>
+            <div className="basecadastro">  
+                <div className="containercadastro">
+                    <Form InputProps={{
+                    style: {
+                      height: "100%",
+                    },
+                  }}>
+                    <h1 className = "titulocadastro"><font color="red"><b>ART ONE</b></font></h1>                
+                        <div className="inputscadastro">
+                            <Form.Group controlId="Nome">
+                                <Form.Control type="text" placeholder="Nome" name="name" onChange={handleInputChange}/>
+                            </Form.Group>
+                            <Form.Group controlId="Email">
+                                <Form.Control type="email" placeholder="name@example.com" name="email" onChange={handleInputChange}/>
+                            </Form.Group>
+                            <Form.Group controlId="Senha">
+                                <Form.Control type="password" placeholder="Senha" name="password" onChange={handleInputChange}/>
+                            </Form.Group>
+                            <Form.Group controlId="Endereco">    
+                                <Form.Control type="text" placeholder="Endereço" name="address" onChange={handleInputChange}/>
+                            </Form.Group>
+                            <Form.Group controlId="TextArt">
+                                <Form.Control as="textarea" rows={3} placeholder="Por que ser artista no século XXI?" name="text" onChange={handleInputChange}/>
+                            </Form.Group>
                             
-                        </Form>
-                        
-                    </div>
-                </div> 
-                <Footer/>
+                            <Button variant="danger" type="submit" onClick={cadastro}>
+                                Cadastre-se
+                            </Button>
+                            <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
+                                <ImHome style={{height: "25px", width: "25px"}}/>
+                            </Button>
+                        </div>    
+                    </Form>
+                </div>
             </div>
         </div>
         

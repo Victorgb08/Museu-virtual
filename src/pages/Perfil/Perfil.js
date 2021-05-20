@@ -86,7 +86,7 @@ function Perfil(){
                     <Typography variant="h5" className="infosPerfil">Informações</Typography>
                     </div>
                     </div>
-                    <Carousel className="carrossel" dynamicHeight="true" infiniteLoop="true" autoPlay="true" interval="2500">
+                    <Carousel className="carrossel_perfil" infiniteLoop="true">
                         <div>
                             <img
                                 src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?cs=srgb&dl=pexels-pixabay-532263.jpg&fm=jpg"

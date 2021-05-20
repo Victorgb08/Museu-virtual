@@ -17,9 +17,6 @@ function Routes(){
             <Switch>
                 <Route exact path="/login" component={Login}/>
                 <Route path="/cadastro" component={Cadastro}/>
-                
-                
-                
                 <Route path="/footer" component={Footer}/>
                 <Route path="/" component={UserMenu}/>
             </Switch>
