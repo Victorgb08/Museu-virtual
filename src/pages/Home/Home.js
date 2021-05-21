@@ -105,6 +105,7 @@ function Home() {
           <p />
         </Typography>
       </div>
+      <Footer/>
     </div>
   );
 }

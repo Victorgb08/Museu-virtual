@@ -6,6 +6,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import {Button, Form} from "react-bootstrap"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import Footer from "../Footer";
 
 function Perfil(){
 
@@ -133,6 +134,7 @@ function Perfil(){
                         ))}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
