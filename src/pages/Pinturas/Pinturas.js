@@ -1,12 +1,9 @@
-import React, {useState} from "react";
-import pinturas from '../../TodasPinturas/TodasPinturas'
-import "./Pinturas.css";
+import React, {useState, useCallback, useEffect} from "react";
 import {Select,MenuItem} from '@material-ui/core';
-import ImageList from '@material-ui/core/ImageList';
-import ImageListItem from '@material-ui/core/ImageListItem';
-import ImageListItemBar from '@material-ui/core/ImageListItemBar';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
+import {photos} from '../../Utils/Fotos';
+import "./Pinturas.css";
 
 function Pinturas(){
 
@@ -16,49 +13,59 @@ function Pinturas(){
         setCategoria(e.target.value)
     };
     const all = "all";
+    let [vetor, setvetor] = useState(photos);
+    useEffect(()=> {
+        if(categoria !== all){
+            const novo = photos.find((todaspinturas) => todaspinturas.estilo === categoria);
+            console.log(novo);
+            setvetor([novo]);    
+        }
+        else{
+            setvetor(photos);
+        }
+    },[categoria])
+
+    const [currentImage, setCurrentImage] = useState(0);
+    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+    const openLightbox = useCallback((event, { photo, index }) => {
+        setCurrentImage(index);
+        setViewerIsOpen(true);
+    }, []);
+
+    const closeLightbox = () => {
+        setCurrentImage(0);
+        setViewerIsOpen(false);
+    };
 
     return (         
         <div className="PaiPinturas">
             <Select value={categoria} displayEmpty onChange={updateSelectCateg}>
                 <MenuItem value="" disabled >Selecione uma Categoria</MenuItem>
                     <MenuItem value="all">Todas as Pinturas</MenuItem>
-                    <MenuItem value="surrealismo">surrealismo</MenuItem>
-                    <MenuItem value="cubismo" >cubismo</MenuItem>
-                    <MenuItem value="futurismo" >futurismo</MenuItem>
-                    <MenuItem value="expressionismo" >expressionismo</MenuItem>
+                    <MenuItem value="tipo 1">O grito</MenuItem>
+                    <MenuItem value="tipo 2">O cavaleiro azul</MenuItem>
+                    <MenuItem value="tipo 3">futurismo</MenuItem>
+                    <MenuItem value="tipo 4">expressionismo</MenuItem>
             </Select>
             <div className="teste">
-                <ImageList sx={{width: "90vw", height: "90vh"}} variant="quilted" cols={6} gap={8}>
-                    {pinturas.filter(todaspinturas => todaspinturas.estilo === categoria || all === categoria).map(imagensfiltradas => (
-                        <ImageListItem key={imagensfiltradas.img} cols={imagensfiltradas.cols} rows={imagensfiltradas.rows}>
-                            <img
-                                srcSet={imagensfiltradas.img}
-                                alt={imagensfiltradas.titulo}
+                <Gallery photos={vetor} onClick={openLightbox} />
+                <ModalGateway>
+                    {viewerIsOpen ? (
+                        <Modal onClose={closeLightbox}>
+                            <Carousel
+                                currentIndex={currentImage}
+                                views={vetor.map(x=>({
+                                    ...x,
+                                    srcset: x.srcSet,
+                                    caption: x.title
+                                }))}
                             />
-                            <ImageListItemBar
-                                sx={{background:
-                                    'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                                    'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-                            }}
-                            title={imagensfiltradas.titulo}
-                            position="top"
-                            actionIcon={
-                                <IconButton
-                                    sx={{color: 'white' }}
-                                    arial-label={`info about ${imagensfiltradas.titulo}`}
-                                >
-                                    <InfoIcon />
-                                </IconButton>
-                            }
-                            actionPosition="left"
-                            />
-                        </ImageListItem>
-                    ))}
-                </ImageList>   
+                        </Modal>
+                    ) : null}
+                </ModalGateway>
             </div>  
         </div>
-                
     );
 }
-
 export default Pinturas;
