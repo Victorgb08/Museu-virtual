@@ -17,9 +17,6 @@ function Routes(){
             <Switch>
                 <Route exact path="/login" component={Login}/>
                 <Route path="/cadastro" component={Cadastro}/>
-                
-                <Route path="/perfil" component={Perfil}/>
-                
                 <Route path="/footer" component={Footer}/>
                 <Route path="/" component={UserMenu}/>
             </Switch>
@@ -35,6 +32,7 @@ function UserMenu(){
                 <Route path="/pinturas" component={Pinturas}/>
                 <Route path="/maiscomentadas" component={MaisComentadas}/>
                 <Route path="/historia" component={Historia}/>
+                <Route path="/perfil" component={Perfil}/>
                 <Route component={()=><Redirect to="/login" />}/>
             </Switch>
         </Menu>

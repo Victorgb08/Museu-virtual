@@ -1,14 +1,18 @@
+
+.pai_his{
+    height: 100%;
+}
 .base_historia{
     font-family: 'Fjalla One', sans-serif;
     opacity: initial;
+    font-size: 3vw;
 }
 .back_his{
-    height: 200vh;
+    height: 140%;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,.4)),url("https://images.pexels.com/photos/7505204/pexels-photo-7505204.jpeg?cs=srgb&dl=pexels-valeriya-kobzar-7505204.jpg&fm=jpg");
-    background-repeat: no-repeat;
-    background-size:100%;
-    background-position-x: center;
-    background-position-y:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
     color: white;
     text-align: center;
 }
@@ -18,31 +22,49 @@
     position: relative;
     opacity: initial;
     font-family: 'Pacifico', cursive;
+    font-size: 2vw;
 }
 .tit_his{
-    font-size:clamp(15px,48px,70px);
     font-family: 'Prompt', sans-serif;
     color:red;
     text-shadow: 0.1em 0.1em 0.2em black;
+    font-size: 3.5vw;
 }
 .his{
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Cinzel', serif;
-    padding:0 50px 0 50px;
+    padding:0 20vh 0 20vh;
+    font-size: 2vw;
+    text-align:justify;
 }
 .icons_his{
     display: flex;
     flex-direction: column;
 }
+.cnt_his{
+    font-size: 1.8vw;
+}
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
-/* @media only screen and (max-width:400px) {
-    *{
-        background-color:black;
-        font-size: 150px;
+@media only screen and (max-width:400px) {
+    .back_his{
+        height: 100%;
     }
-} */
+    .frase_tit{
+        font-size: 3vw;
+    }
+    .tit_his{
+        font-size: 5vw;
+    }
+    .his{
+        font-size: 3.2vw;
+        padding:0 8vh 0 8vh;
+    }
+    .cnt_his{
+        font-size: 3vw;
+    }
+}

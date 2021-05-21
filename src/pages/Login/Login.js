@@ -10,15 +10,12 @@ function Login() {
   const history = useHistory();
 
   return (
-    <>
-      <div className="base">
-        <img
-          src="https://images.pexels.com/photos/1193743/pexels-photo-1193743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="Paleta"
-        />
-        <div className="conteiner">
+    <div className="total_login">
+      <div className="base_login">
+        <div className="conteiner_login">
           <div>
-            <Form className="inputs">
+          <h1 className = "titulocadastro"><font color="#D00000"><b>ART ONE</b></font></h1>
+            <Form className="inputs_login">
               <Form.Group controlId="Email">
                 <Form.Control
                   type="email"
@@ -33,26 +30,27 @@ function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Button variant="dark" onClick={() => history.push("Home")}>
+              <Button className="loginButton_login" variant="dark" onClick={() => history.push("Home")}>
                 {" "}
                 Login{" "}
               </Button>{" "}
               <Button
-                className="cadastroButton"
+                className="cadastroButton_login"
                 variant="dark"
                 onClick={() => history.push("Cadastro")}
               >
                 {" "}
                 Cadastro{" "}
               </Button>{" "}
-              <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
+              <Button className="homeButton_login" variant="outlined" color="primary" onClick={() => history.push("Home")} >
                 <ImHome style={{height: "25px", width: "25px"}}/>
               </Button>
             </Form>
           </div>
         </div>
       </div>
-    </>
+    </div>
+
   );
 }
 

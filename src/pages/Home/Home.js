@@ -24,14 +24,7 @@ const pinturas = [
     description: "A arte é o compo em que a razão se confunde",
     alt: "Thirth slide",
   },
-  {
-    id: 3,
-    name: "Pintura3",
-    src: "https://cdn.pixabay.com/photo/2013/02/06/15/07/fish-78577_960_720.jpg",
-    title: "Terceira Arte",
-    description: "A arte é o compo em que a razão se confunde",
-    alt: "Fourth slide",
-  },
+
 ];
 
 
@@ -76,15 +69,14 @@ function Home() {
   }
 
   return (
-    <>
+    <div className="total_home">
       <div className="backgroundHome">
         {setBackground()}
         <div className="BorderLine" />
         <Carousel
           className="carrosselArts"
-          autoPlay="true"
-          dynamicHeight="true"
           infiniteLoop="true"
+          showThumbs=""
         >
           {pinturas.map((artes) => (
             <div className="artsMuseu">
@@ -112,9 +104,9 @@ function Home() {
           <p />
           <p />
         </Typography>
-        <Footer />
       </div>
-    </>
+      <Footer/>
+    </div>
   );
 }
 

@@ -2,12 +2,13 @@
 .total_perfil {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background-image: url("https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg");
+    background: linear-gradient(#f41c358f,#fc2e008f, #ec7e108f, #f69d0d8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f);
+    position: absolute;
+    /*background-image: url("https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg"); 
     background-repeat: no-repeat;
-    background-size: cover;
-    overflow: auto;
+    background-size: cover; */
 }
 
 .header {
@@ -17,6 +18,33 @@
     align-items: center;
     justify-items: center;
     position: relative;
+}
+
+.perfil_section {
+    background-color: rgba(255, 255, 255, 0.287);
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+.infos_avatar{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-self: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.infosPerfil {
+    display: flex;
+    align-self: flex-start;
+}
+
+.infosPerfilMobile{
+    display: none;
 }
 
 .botao {
@@ -46,15 +74,31 @@
     justify-content: center;
 }
 
-.carrossel {
-    width: 200px;
+.carrossel_perf {
+    width: 300px;
     align-self: center;
     align-content: center;
     align-items: center;
+    display: none;
+}
+
+.image_car {
+    height: 220px;
+    object-fit: cover;
+    object-position: center center;
+    width: 300px;
+    border-radius: 0.9cm;
+}
+
+.imgDisp {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 970px){
     .header {
         margin-bottom: 30px;
         display: flex;
@@ -64,6 +108,18 @@
         position: relative;
         font-size: 0.75em;
     }
+
+    .perfil_section {
+        align-content: center;
+    }
+
+    .infosPerfil {
+        display: none;
+        align-self: flex-start;
+    }
+    .infosPerfilMobile{
+        display: flex;
+    }
     .container_perfil {
         display: flex;
         flex-direction: column;
@@ -71,5 +127,42 @@
         justify-self: center;
         z-index: 0;
         position: relative;
+    }
+
+    .carrossel_perf {
+        width: 300px;
+        justify-self: center !important;
+        display: flex;
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .imgDisp {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:335px){
+    .carrossel_perfil{
+        width: 220px;
+    }
+
+    .image_car{
+        height: 150px;
+    }
+    .imgDisp {
+        display: none;
+    }
+
+    .perfil_section {
+        max-height: 450px;
+    }
+}
+
+@media only screen and (min-width:600px){
+    .infosPerfil{
+        display: flex;
+        justify-content: flex-end;
     }
 }

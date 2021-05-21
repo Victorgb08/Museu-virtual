@@ -1,46 +1,73 @@
-.conteiner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 300px;
-    flex-grow: 1;
+.total_login{
+    height:100vh;
+    width: 100vw;
+    overflow: auto;
 }
 
-.base {
-    height: auto;
+.base_login {
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: auto;
-   
+    background: linear-gradient(#ffb90893,#dc2e0298);
+    overflow: auto;
 }
 
-.inputs {
+.conteiner_login {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    text-align: center !important;
+    justify-content: center;
+    flex-grow: 1;
+    height: 400px;
+    background: #beb9b92a;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 1cm;
+    margin-top: 20px;
+}
+
+
+.inputs_login {
    display: flex;
    margin-left: 32px;
    margin-right: 32px;
    flex-direction: column;
-   margin-top: 500px;
    position: relative;
+   
 }
 
-.base img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
+.loginButton_login {
+    background-color: #D00000 !important;
 }
 
-.cadastroButton {
+.cadastroButton_login {
     margin-top: 10px;
+    background-color: #D00000 !important;
 }
 
-.homeButton {
+.homeButton_login {
    display: flex;
    margin-top: 5px;
    margin-left: 50px;
    margin-right: 50px;
+}
+
+@media only screen and (max-width:1050px){
+    .base_login {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: auto;
+        background:url("https://i.pinimg.com/originals/ae/ab/e5/aeabe54da1806324300ad9dba1f9c5a3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        overflow: auto;
+    }
+    
 }
