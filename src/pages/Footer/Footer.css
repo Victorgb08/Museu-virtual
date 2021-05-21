@@ -1,101 +1,176 @@
 .footer_ct {
-    padding: 25px;
-    position: relative;
+    padding:0 0 1vw 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(grey,black);
-}
-.icons_footer{
-    display: flex;
-}
-.image_footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 13%;
-}
-.image_footer img{
-    padding: 12px;
-    padding-right:8px;
-    z-index: 2;
+    width: 100%;
+    background-image: linear-gradient(darkred,black);
 }
 .userName_footer{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: auto;
-    font-size: 1.1rem;
-    max-width: 20%;
+    font-size: 2vw;
     font-family: 'Girassol', cursive;
-    font-size: 25px;
     color:white;
-    z-index: 1;
+    width: 100%;
 }
-.vertical_footer{
-    border-left: 1px solid white;
-    height: auto;
-    margin-right: 8px;
-    margin-bottom: 8px;
+
+.gg-facebook {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 20px;
+    color: white;
 }
-.icons_redes{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
+
+.gg-instagram {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    color: white;
 }
+.gg-twitter {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 20px;
+    color:white;
+}
+
 .guia_footer{
     display: flex;
     align-items: center;
-    padding: 30px;
-    margin-top: 2%;
-    border-top:1px solid white;
+    border-top:1px white solid;
+    padding-top: 1%;
 }
 .frase{
     font-family: 'Girassol', cursive;
-    font-size: 3vmax;
+    font-size: 3vw;
     color:white;
     max-width: 50%;
     margin-left: auto;
 }
 .base_footer{
     display: flex;
-    justify-content:space-around;
-    margin: auto;
-    max-width: 30%;
-    font-size:large;
-}
-.back_footer{
-    background-image: url("https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
-    background-size:cover;
-    position: absolute;
-    left: 0;
-    top: 0;
+    justify-content:space-between;
+    align-items: center;
+    text-align: center;
     width: 100%;
-}
-.footer_ct img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
+    font-size:2vh;
 }
 .footer_ct section{
-    display: flex;
-    justify-content:space-around;
-    z-index: 1;
     width: 100%;
+}
+.icons_redes{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
 
 }
-.text-uppercase{
-    width: auto;
-}
 .link_footer{
-    z-index: 1;
     font-weight: bold;
-    padding-right:8%;
     font-family: 'Cabin', sans-serif;
-    width: auto;
+    width: 100%;
     color:white;
+}
+.icon_teste{
+    width: 100%;
+}
+.move_teste1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100%;
+
+}
+.move_teste2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.move_teste3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .userName_footer {
+      font-size: 4vw;
+    }
+    .base_footer{
+        font-size:1.5vh;
+    }
+    .gg-facebook::after,
+    .gg-facebook::before {
+        content: "";
+        display: block;
+        position: absolute;
+        box-sizing: border-box
+    }
+    .gg-facebook::before {
+        width: 8px;
+        height: 17px;
+        border-left: 3px solid;
+        border-top: 3px solid;
+        border-top-left-radius: 4px;
+        left: 5px
+    }
+    .gg-facebook::after {
+        width: 9px;
+        height: 3.2px;
+        background: currentColor;
+        top: 6px;
+        left: 3px;
+        transform: skew(-5deg)
+    }
+    .gg-instagram {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        border: 2px solid transparent;
+        box-shadow: 0 0 0 2px;
+        border-radius: 5px;
+        width: 18px;
+        height: 18px;
+        color: white;
+    }
+    .gg-instagram::after,
+    .gg-instagram::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute
+    }
+    .gg-instagram::after {
+        border: 2px solid;
+        left:2px;
+        width: 9px;
+        height: 9px;
+        border-radius: 100%;
+        top: 3px
+    }
+    .gg-instagram::before {
+        border-radius: 3px;
+        width: 2px;
+        height: 2px;
+        background: currentColor;
+        right: 2px;
+        top: 1px
+    }
 }
 @import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('https://css.gg/facebook.css');
+@import url('https://css.gg/instagram.css');
+@import url('https://css.gg/twitter.css');

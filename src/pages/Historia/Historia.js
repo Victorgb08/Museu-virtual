@@ -3,10 +3,11 @@ import Footer from "../Footer"
 import "./Historia.css";
 import {FaFacebook,FaInstagram,FaTwitter} from "react-icons/fa";
 import {IconButton} from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
 function Historia(){
     return(
-        <div>
+        <div className="pai_his">
             {/* <img className="img_his" src="https://images.pexels.com/photos/7505204/pexels-photo-7505204.jpeg?cs=srgb&dl=pexels-valeriya-kobzar-7505204.jpg&fm=jpg"/> */}
             <div className="back_his">
                 <div>
@@ -14,7 +15,7 @@ function Historia(){
                         Oi, somos a Art One!!
                     </h1>
                     <h2 className="frase_tit">
-                        "A arte libera a alma e colore os pensamentos"
+                        "A arte liberta a alma e colore os pensamentos"
                     </h2>
                 </div>
                 <div>
@@ -36,13 +37,14 @@ Muito mais que um site, o Elo7 nasceu em 2008 com a missão de transformar a vid
                     <h1 className="tit_his">
                         Contate-nós
                     </h1>
-                    <h2>
+                    <h2 className="cnt_his">
                         Numéro: (31) 9999-9999
                     </h2>
-                    <h2>
+                    <h2 className="cnt_his">
                         Email: XXXXXXX@gmail.com
                     </h2>
-                    <div>
+                    
+                    {/* <div>
                         <a href="https://www.google.com" role="button">
                         <IconButton >
                             <FaFacebook/>
@@ -58,7 +60,7 @@ Muito mais que um site, o Elo7 nasceu em 2008 com a missão de transformar a vid
                             <FaTwitter/>
                         </IconButton>  
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <Footer/>
