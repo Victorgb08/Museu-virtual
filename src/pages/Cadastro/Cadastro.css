@@ -1,23 +1,12 @@
-* {
-    box-sizing: unset;
-  }
-  
-  html,
-  body {
-    height: auto;
-    width: auto;
-  }
-  div#root {
-    height: auto;
-    width: auto;
-  }
+
 
 .FundoTelaCadastro {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://cdn.pixabay.com/photo/2017/08/27/23/11/background-2687925_960_720.jpg");
+    /* background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://cdn.pixabay.com/photo/2017/08/27/23/11/background-2687925_960_720.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background: linear-gradient(#dc2e0298,#ffb90893);
     height: 100vh;
     width: 100%;
     overflow: auto;
@@ -38,9 +27,15 @@
     max-width: 423px;
     align-items: center;
     justify-items: center;
-    margin-top: 100px; 
     flex-grow: 1;
-    /*position: relative;*/
+    background: #beb9b92a;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 2cm;
+}
+
+.forms_cad {
+   max-height: 500px  !important;
 }
 
 .titulocadastro{
@@ -60,8 +55,12 @@
     margin-bottom: 118px;
 }
 
-.Form {
-    height:90%;
+.form {
+    height:50% !important;
+}
+
+.btn-danger {
+    background-color: #D00000 !important;
 }
 
 @media only screen and (max-width:500px){
@@ -74,6 +73,12 @@
     }
     .inputscadastro{
         margin-bottom: 0px;
+    }
+
+    .containercadastro{
+        border-radius: 0;
+        box-shadow:inherit;
+        background: inherit;
     }
 
 }

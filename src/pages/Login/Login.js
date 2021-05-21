@@ -14,6 +14,7 @@ function Login() {
       <div className="base_login">
         <div className="conteiner_login">
           <div>
+          <h1 className = "titulocadastro"><font color="#D00000"><b>ART ONE</b></font></h1>
             <Form className="inputs_login">
               <Form.Group controlId="Email">
                 <Form.Control
@@ -29,7 +30,7 @@ function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Button variant="dark" onClick={() => history.push("Home")}>
+              <Button className="loginButton_login" variant="dark" onClick={() => history.push("Home")}>
                 {" "}
                 Login{" "}
               </Button>{" "}

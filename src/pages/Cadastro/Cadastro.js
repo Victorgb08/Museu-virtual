@@ -4,11 +4,20 @@ import {useHistory} from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import "./Cadastro.css";
 import { ImHome } from "react-icons/im";
+import { BiCommentAdd } from "react-icons/bi";
+import { MdFilterFrames, MdHome, MdInfo } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { GoSignIn } from "react-icons/go";
+import { IoLogIn } from "react-icons/io5";
+import { Drawer, IconButton, List, ListItem, ListItemText, Typography } from "@material-ui/core";
+import { IconContext } from "react-icons/lib";
 
 
 function Cadastro(){
     const [membro, setMembro] = useState({});
     const history = useHistory();
+    const [currentPage, setCurrentPage] = useState("/home");
+    const [open, setOpen] = useState(false);
     
     function cadastro(){
         // alert("Bem vindo\n" + membro.name);
@@ -34,19 +43,97 @@ function Cadastro(){
                     <MdHome/> 
                 </Button>
     */
+
+    const menuPages = [
+        {
+            pathName: "/home",
+            icon: <MdHome /> ,
+            text: " Home",
+            iconSize: "1.5em",
+        },
+        {
+            pathName: "/login",
+            icon: <IoLogIn /> ,
+            text: " Login",
+            iconSize: "1.5em",
+        },
+        {
+            pathName: "/cadastro",
+            icon: <GoSignIn /> ,
+            text: " Cadastre-se",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/perfil",
+            icon: <CgProfile />,
+            text: " Perfil",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/pinturas",
+            icon: <MdFilterFrames />,
+            text: " Pinturas",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/maiscomentadas",
+            icon: <BiCommentAdd />,
+            text: " Mais Comentadas",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/footer",
+            icon: <MdInfo />,
+            text: " Footer",
+            iconSize: "1.4em",
+        }
+    ]
+
+    function handleClick(pathName){
+        history.push(pathName);
+        setCurrentPage(pathName);
+    }
+
+    function handleDrawer(abrir){
+        setOpen(abrir);
+
+    }
+
     return(
         <div className="FundoTelaCadastro">
-            <div className="basecadastro">  
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={()=>handleDrawer(!open)}></IconButton>
+            <Drawer open={open} onClose={()=> handleDrawer(false)}>
+                <List className="list">
+                    {menuPages.map((listItem) => {
+                        return (
+                            <ListItem 
+                                button
+                                onClick={()=> { handleClick(listItem.pathName);}}
+                                selected={currentPage === listItem.pathName}
+                                >
+                                <IconContext.Provider value={{ color: "#343434", size: listItem.iconSize}}>
+                                    {listItem.icon}
+                                </IconContext.Provider>
+                                <ListItemText className="listItemText">
+                                    <Typography>{listItem.text}</Typography>
+                                </ListItemText>
+                            </ListItem>
+                        )
+                    })}
+                </List>
+            </Drawer>
+            <div className="basecadastro">
                 <div className="containercadastro">
                     <Form InputProps={{
                     style: {
                       height: "100%",
                     },
-                  }}>
-                    <h1 className = "titulocadastro"><font color="red"><b>ART ONE</b></font></h1>                
+                  }}
+                  className="forms_cad">
+                    <h1 className = "titulocadastro"><font color="#D00000"><b>ART ONE</b></font></h1>                
                         <div className="inputscadastro">
                             <Form.Group controlId="Nome">
-                                <Form.Control type="text" placeholder="Nome" name="name" onChange={handleInputChange}/>
+                                <Form.Control type="text" placeholder="Nome" name="name" InputLabelProps={{style:{background:"black",},}} onChange={handleInputChange}/>
                             </Form.Group>
                             <Form.Group controlId="Email">
                                 <Form.Control type="email" placeholder="name@example.com" name="email" onChange={handleInputChange}/>

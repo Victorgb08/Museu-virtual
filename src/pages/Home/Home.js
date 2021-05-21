@@ -76,6 +76,7 @@ function Home() {
         <Carousel
           className="carrosselArts"
           infiniteLoop="true"
+          showThumbs=""
         >
           {pinturas.map((artes) => (
             <div className="artsMuseu">
