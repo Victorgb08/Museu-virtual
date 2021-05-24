@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
     background: linear-gradient(darkred,#f41c358f,#fc2e008f, #ec7e108f, #f69d0d8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f, darkred);
     /*background-image: url("https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg"); 
     background-repeat: no-repeat;
@@ -83,18 +82,22 @@
 }
 
 .image_car {
-    height: 220px;
+    height: 250px;
+    max-height: 250px;
     object-fit: cover;
     object-position: center center;
-    width: 300px;
+    width: 80%;
     border-radius: 0.9cm;
+    align-self: center;
 }
 
 .imgDisp {
-    display: flex;
+    display: grid;
     margin-top: 30px;
-    flex-direction: row;
-    justify-content: space-evenly;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(3,minmax(250px,1fr));
+    align-items: center;
 }
 
 .infos_perf {
@@ -105,6 +108,12 @@
 
 .infos2 {
     font-size: 100%;
+}
+
+.swiper-container {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
 }
 
 

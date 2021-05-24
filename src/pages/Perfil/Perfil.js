@@ -7,9 +7,12 @@ import {Button, Form} from "react-bootstrap"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer";
+import Swiper from 'react-id-swiper'
+
+
 
 function Perfil(){
-
+    
     const pinturas = [
         {
           id: 1,
@@ -26,6 +29,62 @@ function Perfil(){
           title: "Segunda Arte",
           description: "A arte é o compo em que a razão se confunde",
           alt: "Second slide",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
+        },
+        {
+            id:3,
+            name: "Pintura3",
+            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
+            title: "Terceira Arte",
+            description: "Arte3",
+            alt: "Terceira imagem",
         },
         {
             id:3,
@@ -55,6 +114,23 @@ function Perfil(){
 
     function alterar_senha () {
         alert ("Senha antiga: "+ senha + "\nNova Senha: " + nova_senha)
+    }
+    
+    const params = {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        },
+        pagination: {
+            el: '.swiper-pagination'
+          }
     }
 
     return (
@@ -116,6 +192,7 @@ function Perfil(){
                         </div>
                     </div>
                 </div>
+
                 <Carousel infiniteLoop="true" showThumbs="" width="80%" className="carrossel_perf" showStatus="">
                         
                     {pinturas.map((artes) => (
@@ -124,14 +201,13 @@ function Perfil(){
                     </div>
                         ))}
                 </Carousel>
-
-                <div className="imgDisp">
-                {pinturas.map((artes) => (
-                    <div className="artsMuseu">
-                    <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" />
+                    <div className="imgDisp">
+                    {pinturas.map((artes) => (
+                        <div className="artsMuseu">
+                        <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" />
+                        </div>
+                            ))}
                     </div>
-                        ))}
-                </div>
             </div>
             <div className="infos_perf">
             <Typography variant="h4">Informações gerais</Typography>

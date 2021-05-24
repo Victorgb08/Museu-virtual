@@ -40,7 +40,7 @@
 
 .titulocadastro{
     font-size: 400%;
-    font-family: 'Courier New';
+    font-family: Berkshire Swash;
     font-style: italic;
     /*Font weiht é a borda da letra e negrito*/
     font-weight: 900;
@@ -63,6 +63,11 @@
     background-color: #D00000 !important;
 }
 
+.btn {
+    font-family: Berkshire Swash;
+    border-radius: 0.5cm;
+}
+
 @media only screen and (max-width:500px){
 
     .FundoTelaCadastro {
@@ -83,3 +88,4 @@
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Open+Sans&display=swap');
