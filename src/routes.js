@@ -35,7 +35,7 @@ function UserMenu(){
                 <Route path="/maiscomentadas" component={MaisComentadas}/>
                 <Route path="/historia" component={Historia}/>
                 <Route path="/perfil" component={Perfil}/>
-                <Route component={()=><Redirect to="/login" />}/>
+                <Route component={()=><Redirect to="/home2" />}/>
             </Switch>
         </Menu>
     );

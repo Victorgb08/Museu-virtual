@@ -1,101 +1,163 @@
-    
-    .tudo_da_home2{
-        height: 120%;
-        width: 100%;
-    }
+  
+.tudo_da_home2{
+    height: 100vh;
+    max-height: 100000000px;
+    width: 100%;
+}
 
-  .total_home2{
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(darkred,#6A040F,#F48C06,#F48C06,#6A040F,darkred);
-      height: 260%;
-      width: 100%;
-  }
-
-  .titulo_home2 {
-    font-family: Berkshire Swash;
-    font-size: 96px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 119px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #FFFFFF;
-  }
-
-  .subtitulo_home2 {
-    font-family: Berkshire Swash;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 45px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 5%;
-    margin-bottom: 8%;
-  }
-
-  .image_car_home2 {
-    height: 332px;
-    object-fit: cover;
-    object-position: center center;
-    width: 300px;
-    border-radius: 0.9cm;
-  }
-
-  .carrossel_home2 {
-    width: 553px;
-    align-self: center;
-    align-content: center;
-    align-items: center;
-  }
-
-  .BorderLine_home2 {
+.total_home2{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 3px;
-    width: 88%;
-    margin-top: 15px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    align-self:center;
-  }
+    background: linear-gradient(darkred,#6A040F,#F48C06,#F48C06,#6A040F,darkred);
+    width: 100%;
+}
 
-  .imagens_home2 {
-      display: flex;
-      flex-direction: column;
-  }
+.titulo_home2 {
+  font-family: Berkshire Swash;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 119px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+}
 
-  .imagens_laterais1_home2 {
-      display: flex;
-      margin-top: 2%;
-      display: flex;
-      align-self: flex-start;
-      width: 423px;
-      height: 333px;
-      background: url("https://i.pinimg.com/originals/91/35/fa/9135fa81050ad61b0ae85c2cf07f58ad.png");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      max-height: 1000px !important;
-      margin-left: 5%;
-  }
+.subtitulo_home2 {
+  font-family: Berkshire Swash;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
 
-  .imagens_laterais2_home2 {
+.image_car_home2 {
+  height: 332px;
+  object-fit: cover;
+  object-position: center center;
+  width: 300px;
+  border-radius: 0.9cm;
+}
+
+.carrossel_home2 {
+  width: 553px;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+}
+
+.BorderLine_home2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 3px;
+  width: 88%;
+  margin-top: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  align-self:center;
+}
+
+.imagens_home2 {
     display: flex;
-    margin-top: 2%;
-    display: flex;
-    align-self: flex-end;
-    width: 423px;
-    height: 333px;
-    background: url("https://i.pinimg.com/564x/58/1c/c0/581cc0678e1d46d589ce80ca4c488e79.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-height: 1000px !important;
-    margin-right: 5%;
+    flex-direction: column;
+}
+
+.imagens_laterais1_home2 {
+  display: flex;
+  margin-top: 2%;
+  display: flex;
+  align-self: flex-start;
+  width: 423px;
+  height: 333px;
+  background: url("https://i.pinimg.com/originals/91/35/fa/9135fa81050ad61b0ae85c2cf07f58ad.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 1000px !important;
+  margin-left: 5%;
+}
+
+.texto_imagem1 {
+  font-family: Bentham !important;
+  font-size: 34px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.pos_texto1 {
+  margin: 20%;
+}
+
+.container_img2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container_texto2 {
+  width:15%;
+  margin-right: 2%;
+}
+.texto_img2 {
+  font-family: Bentham !important;
+  font-size: 25px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FFFFFF;
+  align-items: center;
+}
+
+.imagens_laterais2_home2 {
+  display: flex;
+  margin-top: 2%;
+  display: flex;
+  align-self: flex-end;
+  width: 423px;
+  height: 333px;
+  background: url("https://i.pinimg.com/564x/58/1c/c0/581cc0678e1d46d589ce80ca4c488e79.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 1000px !important;
+  margin-right: 5%;
+}
+
+.container_img3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container_texto3 {
+  width:15%;
+  margin-left: 2%;
+}
+
+.texto_img3 {
+  font-family: Bentham !important;
+  font-size: 25px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FFFFFF;
+  align-items: center;
 }
 
 .imagens_laterais3_home2 {
@@ -126,6 +188,34 @@
     margin-right: 5%;
 }
 
+.texto_imagem4 {
+  font-family: Bentham !important;
+  font-size: 30px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.pos_texto4 {
+  margin: 20%;
+}
+
+.BorderLine2_home2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 3px;
+  width: 70%;
+  margin-top: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  align-self:center;
+  margin-top: 3%;
+}
+
 .titulo_baixo_home2 {
     margin-top: 4%;
     font-family: Berkshire Swash;
@@ -147,17 +237,98 @@
     letter-spacing: 0em;
     text-align: center;
     color: #FFFFFF;
+    margin-bottom: 5%;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
-.BorderLine2_home2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 3px;
-    width: 70%;
-    margin-top: 15px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    align-self:center;
+@media only screen and (max-width: 1040px){
+  .titulo_home2 {
+    font-size: 50px;
   }
+
+  .subtitulo_home2 {
+    font-size: 25px;
+  }
+
+  .image_car_home2 {
+    height: 250px;
+    border-radius: 0.9cm;
+  }
+  
+  .carrossel_home2 {
+    width: 300px;
+  }
+
+  .imagens_laterais1_home2 {
+    align-self: flex-start;
+    width: 200px;
+    height: 150px;
+    background: url("https://i.pinimg.com/originals/91/35/fa/9135fa81050ad61b0ae85c2cf07f58ad.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 5%;
+  }
+
+  .imagens_laterais2_home2 {
+    align-self: flex-end;
+    width: 180px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 5%;
+  }
+
+  .imagens_laterais3_home2 {
+    align-self: flex-start;
+    width: 180px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 5%;
+  }
+
+  .imagens_laterais4_home2 {
+    align-self: flex-end;
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 5%;
+  }
+
+  .titulo_baixo_home2 {
+    font-size: 40px;
+    margin-bottom: 4%;
+  }
+
+  .texto_baixo_home2 {
+      font-size: 20px;
+  }
+
+  .texto_imagem1{
+    font-size: 15px !important;
+  }
+
+  .container_texto2{
+    width: 40%;
+  }
+  .texto_img2 {
+    font-size: 13px !important;
+  }
+  .container_texto3 {
+    width: 40%;
+  }
+  .texto_img3 {
+    font-size: 13px !important;
+
+  }
+
+  .texto_imagem4 {
+    font-size: 15px !important;
+  }
+}
+
+
   @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Open+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
