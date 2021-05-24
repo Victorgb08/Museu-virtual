@@ -78,7 +78,7 @@ function Menu(props){
     return (
         <>
             <AppBar position="static">
-                <Toolbar style={{backgroundColor:"#F41C34"}}>
+                <Toolbar className="toolbar">
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={()=>handleDrawer(!open)}>
                         <FiMenu />
                     </IconButton>

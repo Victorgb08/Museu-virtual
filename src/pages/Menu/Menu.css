@@ -16,3 +16,7 @@
     align-items: center;
     margin-left: auto;
 }
+
+.toolbar {
+    background: linear-gradient(black,darkred);
+}

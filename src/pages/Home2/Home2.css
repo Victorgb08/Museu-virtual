@@ -1,0 +1,163 @@
+    
+    .tudo_da_home2{
+        height: 120%;
+        width: 100%;
+    }
+
+  .total_home2{
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(darkred,#6A040F,#F48C06,#F48C06,#6A040F,darkred);
+      height: 260%;
+      width: 100%;
+  }
+
+  .titulo_home2 {
+    font-family: Berkshire Swash;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .subtitulo_home2 {
+    font-family: Berkshire Swash;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 5%;
+    margin-bottom: 8%;
+  }
+
+  .image_car_home2 {
+    height: 332px;
+    object-fit: cover;
+    object-position: center center;
+    width: 300px;
+    border-radius: 0.9cm;
+  }
+
+  .carrossel_home2 {
+    width: 553px;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .BorderLine_home2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 3px;
+    width: 88%;
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    align-self:center;
+  }
+
+  .imagens_home2 {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .imagens_laterais1_home2 {
+      display: flex;
+      margin-top: 2%;
+      display: flex;
+      align-self: flex-start;
+      width: 423px;
+      height: 333px;
+      background: url("https://i.pinimg.com/originals/91/35/fa/9135fa81050ad61b0ae85c2cf07f58ad.png");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      max-height: 1000px !important;
+      margin-left: 5%;
+  }
+
+  .imagens_laterais2_home2 {
+    display: flex;
+    margin-top: 2%;
+    display: flex;
+    align-self: flex-end;
+    width: 423px;
+    height: 333px;
+    background: url("https://i.pinimg.com/564x/58/1c/c0/581cc0678e1d46d589ce80ca4c488e79.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 1000px !important;
+    margin-right: 5%;
+}
+
+.imagens_laterais3_home2 {
+    display: flex;
+    margin-top: 2%;
+    display: flex;
+    align-self: flex-start;
+    width: 423px;
+    height: 333px;
+    background: url("https://i.pinimg.com/564x/7e/a6/14/7ea614378f4cef91f757a544747bf12d.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 1000px !important;
+    margin-left: 5%;
+}
+
+.imagens_laterais4_home2 {
+    display: flex;
+    margin-top: 2%;
+    display: flex;
+    align-self: flex-end;
+    width: 423px;
+    height: 333px;
+    background: url("https://i.pinimg.com/originals/91/35/fa/9135fa81050ad61b0ae85c2cf07f58ad.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 5%;
+}
+
+.titulo_baixo_home2 {
+    margin-top: 4%;
+    font-family: Berkshire Swash;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.texto_baixo_home2 {
+    font-family: Berkshire Swash;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.BorderLine2_home2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 3px;
+    width: 70%;
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    align-self:center;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Open+Sans&display=swap');

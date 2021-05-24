@@ -58,6 +58,7 @@ function Perfil(){
     }
 
     return (
+        <div>
         <div className="total_perfil">
             <Drawer open={ open } onClose={()=> handleDrawer(false)} anchor="top">
                 <List>
@@ -92,19 +93,18 @@ function Perfil(){
                     <div className="botao" >
                     <Link
                         component="button"
-                        color="black"
+                        color="white"
                         onClick={()=> handleDrawer(!open)}
                         >
                         Configurações da Conta
                     </Link>
-                        <IconButton label="Configurações da conta" color="black"  aria-label="editar os dados" className="botao" style={{width:"50px"}} onClick={()=> handleDrawer(!open)} >
+                        <IconButton label="Configurações da conta" aria-label="editar os dados" className="botao" style={{width:"50px", color:"#f8f8f8"}} onClick={()=> handleDrawer(!open)} >
                             <SettingsIcon/>
                         </IconButton>
                     </div>
                 </div>
             <div className="perfil_section">
                 <div className="infos_avatar">
-                <Typography variant="h5" className="infosPerfil">Informações</Typography>
                     <div className="container_perfil" >
                         <div className="avatar_nome">
                             <Avatar alt="Avatar Aleatório" src="https://i.pinimg.com/564x/a8/44/05/a84405d543a674d448c64ac57f25a74a.jpg" style={{ height: '200px', width: '200px'}}/>
@@ -115,7 +115,6 @@ function Perfil(){
                             </div>
                         </div>
                     </div>
-                    <Typography variant="h5" className="infosPerfil">Informações</Typography>
                 </div>
                 <Carousel infiniteLoop="true" showThumbs="" width="80%" className="carrossel_perf" showStatus="">
                         
@@ -134,7 +133,13 @@ function Perfil(){
                         ))}
                 </div>
             </div>
-            <Footer/>
+            <div className="infos_perf">
+            <Typography variant="h4">Informações gerais</Typography>
+            <h1 className="infos2">njasdnjkasndjkasbdhasbdhasb</h1>
+            <br/>
+            </div>
+        </div>
+        <Footer></Footer>
         </div>
     );
 }
