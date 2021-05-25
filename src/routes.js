@@ -29,13 +29,13 @@ function UserMenu(){
     return(
         <Menu>
             <Switch>
-                <Route path="/home" component={Home}/>
-                <Route path="/home2" component={Home2}/>
+                {/* <Route path="/home" component={Home}/> */}
+                <Route path="/home" component={Home2}/>
                 <Route path="/pinturas" component={Pinturas}/>
                 <Route path="/maiscomentadas" component={MaisComentadas}/>
                 <Route path="/historia" component={Historia}/>
                 <Route path="/perfil" component={Perfil}/>
-                <Route component={()=><Redirect to="/home2" />}/>
+                <Route component={()=><Redirect to="/home" />}/>
             </Switch>
         </Menu>
     );

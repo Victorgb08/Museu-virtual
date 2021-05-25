@@ -11,39 +11,39 @@ import { GoSignIn } from "react-icons/go";
 import { IoLogIn } from "react-icons/io5";
 import { Drawer, IconButton, List, ListItem, ListItemText, Typography } from "@material-ui/core";
 import { IconContext } from "react-icons/lib";
-
+import api from '../../Services/api';
 
 function Cadastro(){
-    const [membro, setMembro] = useState({});
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [address, setAddress] = useState('');
+    const [question, setQuestion] = useState('');
+    const [url_perfil, setUrl_perfil] = useState('');
     const history = useHistory();
+
+    async function handleCadastro(e){
+        e.preventDefault();
+        const data = {
+            name, 
+            address, 
+            email, 
+            password, 
+            question,
+            url_perfil,
+        };
+        try {
+            const response = await api.post('/users', data);
+            alert(`Seu ID de acesso: ${response.data.user_id}`);
+            history.push("login");
+        } catch (err) {
+            alert('Erro no cadastro, tente novamente.');
+        }
+    }
+
     const [currentPage, setCurrentPage] = useState("/home");
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);   
     
-    function cadastro(){
-        // alert("Bem vindo\n" + membro.name);
-        history.push("home");
-    }
-
-    function handleInputChange(e){
-        // a key vai pegar o nome de qual input esta sendo modificado
-        const key = e.target.name;
-        // copia o que tinha nos cadastros anteriores por segurança antes de atualizar
-        const newMembro = {...membro};
-        // passa o valor que está sendo inserido para a copia
-        newMembro[key] = e.target.value;
-        // passa para a variavel que vai armazenar tudo mesmo
-        setMembro(newMembro);
-        // console.log(newMembro);
-        // <img src="https://cdn.pixabay.com/photo/2017/09/05/22/58/background-2719560_960_720.jpg " alt="Paleta"/>
-
-    }
-
-    /*Embaixo do div com className basecadastro estava o botão de home
-        <Button variant="danger" onClick={cadastro} className="botaohome">
-                    <MdHome/> 
-                </Button>
-    */
-
     const menuPages = [
         {
             pathName: "/home",
@@ -124,38 +124,50 @@ function Cadastro(){
             </Drawer>
             <div className="basecadastro">
                 <div className="containercadastro">
-                    <Form InputProps={{
-                    style: {
-                      height: "100%",
-                    },
-                  }}
-                  className="forms_cad">
-                    <h1 className = "titulocadastro"><font color="#D00000"><b>ART ONE</b></font></h1>                
-                        <div className="inputscadastro">
-                            <Form.Group controlId="Nome">
-                                <Form.Control type="text" placeholder="Nome" name="name" InputLabelProps={{style:{background:"black",},}} onChange={handleInputChange}/>
-                            </Form.Group>
-                            <Form.Group controlId="Email">
-                                <Form.Control type="email" placeholder="name@example.com" name="email" onChange={handleInputChange}/>
-                            </Form.Group>
-                            <Form.Group controlId="Senha">
-                                <Form.Control type="password" placeholder="Senha" name="password" onChange={handleInputChange}/>
-                            </Form.Group>
-                            <Form.Group controlId="Endereco">    
-                                <Form.Control type="text" placeholder="Endereço" name="address" onChange={handleInputChange}/>
-                            </Form.Group>
-                            <Form.Group controlId="TextArt">
-                                <Form.Control as="textarea" rows={3} placeholder="Por que ser artista no século XXI?" name="text" onChange={handleInputChange}/>
-                            </Form.Group>
-                            
-                            <Button variant="danger" type="submit" onClick={cadastro}>
-                                Cadastre-se
-                            </Button>
+                    <div className="contentcadastro">
+                        <section>
+                            <h1 className = "titulocadastro"><font color="#D00000"><b>ART ONE</b></font></h1>                
+                            <p><b>Faça seu cadastro e venha fortalecer a comunidade artistica!</b></p>
+                        </section>
+                        <form onSubmit={handleCadastro}>
+                            <input 
+                                placeholder="Nome"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                            />
+                            <input 
+                                placeholder="Endereço"
+                                value={address}
+                                onChange={e => setAddress(e.target.value)}
+                            />
+                            <input 
+                                type="email"
+                                placeholder="E-mail"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                            <input 
+                                type="password"
+                                placeholder="Senha"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <input 
+                                placeholder="Por que ser artista no século XXI?"
+                                value={question}
+                                onChange={e => setQuestion(e.target.value)}
+                            />
+                            <input 
+                                placeholder="Url para imagem de Perfil"
+                                value={url_perfil}
+                                onChange={e => setUrl_perfil(e.target.value)}
+                            />
+                            <button className="buttonCadastro" type="submit">Cadastrar</button>
                             <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >
                                 <ImHome style={{height: "25px", width: "25px"}}/>
                             </Button>
-                        </div>    
-                    </Form>
+                        </form>       
+                    </div>
                 </div>
             </div>
         </div>

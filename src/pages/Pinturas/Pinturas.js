@@ -2,28 +2,28 @@ import React, {useState, useCallback, useEffect} from "react";
 import {Select,MenuItem} from '@material-ui/core';
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import {photos} from '../../Utils/Fotos';
+import api from "../../Services/api";
 import "./Pinturas.css";
 
-function Pinturas(){
+const OpcaoCategories = [
+    {
+        name: "releitura",
+        id: 1,
+    },
+    {
+        name: "exuberante",
+        id: 2,
+    },
+];
 
+function Pinturas(){
+    //let [pinturaReserva, setPinturaReserva] = useState();
+    let [paintings, setPaintings] = useState([]);
     const [categoria, setCategoria] = useState("all");
     const updateSelectCateg=(e)=>{
-        console.log(e.target.value)
         setCategoria(e.target.value)
     };
     const all = "all";
-    let [vetor, setvetor] = useState(photos);
-    useEffect(()=> {
-        if(categoria !== all){
-            const novo = photos.find((todaspinturas) => todaspinturas.estilo === categoria);
-            console.log(novo);
-            setvetor([novo]);    
-        }
-        else{
-            setvetor(photos);
-        }
-    },[categoria])
 
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -38,24 +38,58 @@ function Pinturas(){
         setViewerIsOpen(false);
     };
 
+    function buscarPorCategoria(value){
+        if(value.category === categoria){
+            return value;
+            console.log([value]);
+        }
+    };
+
+    //Função para montar o componente que vai ta com as imagens do backEnd
+    async function getAllPaintings(){
+        try {
+            if(categoria !== all){
+                const response = await api.get("/paintings");
+                const novo = response.data.filter((todaspinturas) => todaspinturas.category === categoria);
+                console.log(novo, categoria);
+                setPaintings([novo]);
+            } else{
+                const response = await api.get("/paintings");
+                //console.log(response.data);
+                setPaintings([...response.data]);
+            }
+        } catch (error) {
+            console.warn(error);
+            alert("Algo deu errado");
+        }
+    };
+
+    useEffect(() => {
+        getAllPaintings();
+    }, []);
+    
+    useEffect(() => {
+        getAllPaintings();
+    }, [categoria]);
+    
+    
     return (         
         <div className="PaiPinturas">
             <Select value={categoria} displayEmpty onChange={updateSelectCateg}>
-                <MenuItem value="" disabled >Selecione uma Categoria</MenuItem>
+                <MenuItem value={null} disabled >Selecione uma Categoria</MenuItem>
                     <MenuItem value="all">Todas as Pinturas</MenuItem>
-                    <MenuItem value="tipo 1">O grito</MenuItem>
-                    <MenuItem value="tipo 2">O cavaleiro azul</MenuItem>
-                    <MenuItem value="tipo 3">futurismo</MenuItem>
-                    <MenuItem value="tipo 4">expressionismo</MenuItem>
+                    {OpcaoCategories.map((category) => (
+                        <MenuItem key={category.id} value={category.name}>{category.name}</MenuItem>
+                    ))}
             </Select>
             <div className="teste">
-                <Gallery photos={vetor} onClick={openLightbox} />
+                <Gallery margin={80} photos={paintings} onClick={openLightbox} />
                 <ModalGateway>
                     {viewerIsOpen ? (
                         <Modal onClose={closeLightbox}>
                             <Carousel
                                 currentIndex={currentImage}
-                                views={vetor.map(x=>({
+                                views={paintings.map(x=>({
                                     ...x,
                                     srcset: x.srcSet,
                                     caption: x.title

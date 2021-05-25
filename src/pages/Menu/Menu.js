@@ -1,21 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Avatar, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography} from "@material-ui/core";
 import { MdHome, MdFilterFrames, MdInfo } from "react-icons/md";
 import { IconContext } from "react-icons/lib";
 import "./Menu.css";
 import { useHistory } from "react-router-dom";
-import {useState} from "react";
 import { IoLogIn } from "react-icons/io5";
 import { GoSignIn } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import { BiCommentAdd } from "react-icons/bi";
 import AppBar from '@material-ui/core/AppBar';
 import { FiMenu } from "react-icons/fi";
+import api from "../../Services/api";
+import { isAuthenticated, UserLogado} from "../../Services/auth";
 
 
 
 function Menu(props){
 
+    const [usuarioLogado, setusuarioLogado] = useState([]);
     const history = useHistory();
     const [currentPage, setCurrentPage] = useState("/home");
     const [open, setOpen] = useState(false);
@@ -75,6 +77,9 @@ function Menu(props){
         }
     ]
 
+    const nameUser = localStorage.getItem("nameUser");
+    const UrlPerfil = localStorage.getItem("url_perfil");
+    
     return (
         <>
             <AppBar position="static">
@@ -83,8 +88,8 @@ function Menu(props){
                         <FiMenu />
                     </IconButton>
                     <div className="Usuario">
-                        <h5 className="Nome">Isabella Mariana</h5>
-                        <Avatar alt="Foto Aleatoria" src="https://images.pexels.com/photos/1988681/pexels-photo-1988681.jpeg?cs=srgb&dl=pexels-isabella-mariana-1988681.jpg&fm=jpghttps://images.pexels.com/photos/1988681/pexels-photo-1988681.jpeg?cs=srgb&dl=pexels-isabella-mariana-1988681.jpg&fm=jpg" />
+                        <h5 className="Nome">{nameUser}</h5>
+                        <Avatar alt="Foto Aleatoria" src={UrlPerfil}/>
                     </div>
                 </Toolbar>
             </AppBar>

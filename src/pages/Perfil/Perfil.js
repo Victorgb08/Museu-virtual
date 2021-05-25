@@ -7,7 +7,8 @@ import {Button, Form} from "react-bootstrap"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer";
-import Swiper from 'react-id-swiper'
+import Swiper from 'react-id-swiper';
+import api from "../../Services/api";
 
 
 
