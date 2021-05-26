@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Perfil.css"
-import { Avatar, Drawer, IconButton, Link, List, Typography } from "@material-ui/core";
+import { Avatar, Drawer, IconButton, Link, List, Modal, Typography } from "@material-ui/core";
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import SettingsIcon from '@material-ui/icons/Settings';
 //import Carousel from "react-bootstrap/Carousel"
@@ -74,35 +74,35 @@ function Perfil(){
     return (
         <div>
         <div className="total_perfil">
-            <Drawer open={ open } onClose={()=> handleDrawer(false)} anchor="top">
-                <List>
-                    <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <h1>Mudar o Email</h1>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Insira o novo email" onChange={(e)=>setEmail(e.target.value)}/>
-                        <Form.Text className="text-muted">
-                        </Form.Text>
-                    </Form.Group>
-                    <Button variant="primary" type="submit" onClick={alterar_email}>
-                            Enviar
-                    </Button>
-                    <br/>
-                    <Form.Group controlId="formBasicPassword">
-                        <h1>Mudar Senha</h1>
-                        <Form.Label>Senha atual</Form.Label>
-                        <Form.Control type="password" placeholder="Senha" onChange={(e)=>setSenha(e.target.value)}/>
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Alterar a senha</Form.Label>
-                        <Form.Control type="password" placeholder="Nova Senha" onChange={(e)=>setNova_senha(e.target.value)} />
-                    </Form.Group>
-                        <Button variant="primary" type="submit" onClick={alterar_senha}>
-                            Enviar
-                    </Button>
-                    </Form>
-                </List>
-            </Drawer>
+        <Modal open={ open } onClose={()=> handleDrawer(false)} className="modal_perf"> 
+                <List > 
+                    <Form className="form_perf"> 
+                    <Form.Group controlId="formBasicEmail"> 
+                        <h1>Mudar o Email</h1> 
+                        <Form.Label>Email</Form.Label> 
+                        <Form.Control type="email" placeholder="Insira o novo email" onChange={(e)=>setEmail(e.target.value)}/> 
+                        <Form.Text className="text-muted"> 
+                        </Form.Text> 
+                    </Form.Group> 
+                    <Button variant="primary" type="submit" onClick={alterar_email} className="botoes_modal"> 
+                            Enviar 
+                    </Button> 
+                    <br/> 
+                    <Form.Group controlId="formBasicPassword"> 
+                        <h1>Mudar Senha</h1> 
+                        <Form.Label>Senha atual</Form.Label> 
+                        <Form.Control type="password" placeholder="Senha" onChange={(e)=>setSenha(e.target.value)}/> 
+                    </Form.Group> 
+                    <Form.Group controlId="formBasicPassword"> 
+                        <Form.Label>Alterar a senha</Form.Label> 
+                        <Form.Control type="password" placeholder="Nova Senha" onChange={(e)=>setNova_senha(e.target.value)} /> 
+                    </Form.Group> 
+                        <Button variant="primary" type="submit" onClick={alterar_senha} className="botoes_modal"> 
+                            Enviar 
+                    </Button> 
+                    </Form> 
+                </List> 
+            </Modal>
                 <div className="header">
                     <div className="botaoConfigContaPerfil" >
                     <Link
