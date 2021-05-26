@@ -89,7 +89,7 @@ function Menu(props){
                     </IconButton>
                     <div className="Usuario">
                         <h5 className="Nome">{nameUser}</h5>
-                        {console.log(UrlPerfil)};
+                       
                         <Avatar alt={nameUser} src={UrlPerfil}/>
                     </div>
                 </Toolbar>

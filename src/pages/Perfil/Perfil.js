@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./Perfil.css"
 import { Avatar, Drawer, IconButton, Link, List, Typography } from "@material-ui/core";
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import SettingsIcon from '@material-ui/icons/Settings';
 //import Carousel from "react-bootstrap/Carousel"
 import {Button, Form} from "react-bootstrap"
@@ -10,6 +11,7 @@ import Footer from "../Footer";
 //import Swiper from 'react-id-swiper';
 import api from "../../Services/api";
 import { USER_ID} from '../../Services/auth';
+import { useHistory } from "react-router-dom";
 
 function Perfil(){
 
@@ -19,6 +21,7 @@ function Perfil(){
     const UrlPerfil = localStorage.getItem("UrlPerfil");
     const QuestionUser = localStorage.getItem("QuestionUser");
 
+    const history = useHistory();
     const [open,setOpen]= useState(false);
     
     const  [email, setEmail] = useState();
@@ -101,7 +104,7 @@ function Perfil(){
                 </List>
             </Drawer>
                 <div className="header">
-                    <div className="botao" >
+                    <div className="botaoConfigContaPerfil" >
                     <Link
                         component="button"
                         color="white"
@@ -113,17 +116,33 @@ function Perfil(){
                             <SettingsIcon/>
                         </IconButton>
                     </div>
+                    <br/>
+                    <div className="botaoAddPainting">
+                    <Link
+                        component="button"
+                        color="white"
+                        onClick={() => history.push("add_painting")}
+                        >
+                        Adicionar Pintura
+                    </Link>
+                    <AddToPhotosIcon style={{width:"50px", color:"#f8f8f8" }} onClick={() => history.push("add_painting")}>
+                        <SettingsIcon/>
+                    </AddToPhotosIcon>
+                    </div>
                 </div>
             <div className="perfil_section">
                 <div className="infos_avatar">
+                    
                     <div className="container_perfil" >
                         <div className="avatar_nome">
                             <Avatar alt={nameUser} src={UrlPerfil} style={{ height: '200px', width: '200px'}}/>
                             <div className="textosPerfil">
                                 <Typography variant="h4" className="nomeUsuario">{nameUser}</Typography>
-                                <Typography variant="h5" className="infosPerfilMobile">"{QuestionUser}"</Typography>
+                                {/* <Typography variant="h5" className="infosPerfilMobile">"{QuestionUser}"</Typography> */}
+                                <Typography variant="h5" classname="infosPerfilDesktop">"{QuestionUser}"</Typography>
                             </div>
                         </div>
+                    
                     </div>
                 </div>
 
@@ -142,11 +161,6 @@ function Perfil(){
                         </div>
                             ))}
                     </div>
-            </div>
-            <div className="infos_perf">
-            <Typography variant="h4">Informações gerais</Typography>
-            <h1 className="infos2">"{QuestionUser}"</h1>
-            <br/>
             </div>
         </div>
         <Footer></Footer>

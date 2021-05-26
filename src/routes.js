@@ -10,6 +10,7 @@ import Footer from "./pages/Footer";
 import Menu from "./pages/Menu";
 import Historia from "./pages/Historia";
 import Home2 from "./pages/Home2";
+import AddPainting from "./pages/AddPainting";
 
 
 function Routes(){
@@ -19,6 +20,7 @@ function Routes(){
                 <Route exact path="/login" component={Login}/>
                 <Route path="/cadastro" component={Cadastro}/>
                 <Route path="/footer" component={Footer}/>
+                <Route path="/add_painting" component={AddPainting}/>
                 <Route path="/" component={UserMenu}/>
             </Switch>
         </BrowserRouter>
