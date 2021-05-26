@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
 import "./Perfil.css"
 import { Avatar, Drawer, IconButton, Link, List, Typography } from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -7,116 +7,34 @@ import {Button, Form} from "react-bootstrap"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer";
-import Swiper from 'react-id-swiper';
+//import Swiper from 'react-id-swiper';
 import api from "../../Services/api";
-
-
+import { USER_ID} from '../../Services/auth';
 
 function Perfil(){
-    
-    const pinturas = [
-        {
-          id: 1,
-          name: "Pintura1",
-          src: "https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?cs=srgb&dl=pexels-pixabay-532263.jpg&fm=jpg",
-          title: "Primeira Arte",
-          description: "A arte é o compo em que a razão se confunde",
-          alt: "Firs slide",
-        },
-        {
-          id: 2,
-          name: "Pintura2",
-          src: "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?cs=srgb&dl=pexels-steve-johnson-1585325.jpg&fm=jpg",
-          title: "Segunda Arte",
-          description: "A arte é o compo em que a razão se confunde",
-          alt: "Second slide",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-        {
-            id:3,
-            name: "Pintura3",
-            src: "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?cs=srgb&dl=pexels-sharon-mccutcheon-1148998.jpg&fm=jpg",
-            title: "Terceira Arte",
-            description: "Arte3",
-            alt: "Terceira imagem",
-        },
-      ];
 
+    const IdUsusario = sessionStorage.getItem(USER_ID);
+    let [paintings, setPaintings] = useState([]);
+    const nameUser = localStorage.getItem("nameUser");
+    const UrlPerfil = localStorage.getItem("UrlPerfil");
+    const QuestionUser = localStorage.getItem("QuestionUser");
 
     const [open,setOpen]= useState(false);
     
-
-    function handleDrawer(isOpen){
-        setOpen(isOpen);
-    }
-
     const  [email, setEmail] = useState();
     const  [senha, setSenha] = useState();
     const [nova_senha, setNova_senha]= useState();
 
+    function handleDrawer(isOpen){
+        setOpen(isOpen);
+    }
     function alterar_email () {
         alert("Novo email: " + email);
     }
-
     function alterar_senha () {
         alert ("Senha antiga: "+ senha + "\nNova Senha: " + nova_senha)
     }
-    
+
     const params = {
         effect: 'coverflow',
         grabCursor: true,
@@ -133,6 +51,22 @@ function Perfil(){
             el: '.swiper-pagination'
           }
     }
+
+    async function getUsersPaintings(){
+        try {
+            console.log(`A question do usuario é: ${QuestionUser}`);
+            const response = await api.get(`/paintings?${IdUsusario}`);
+            console.log(`O url de perfil é: ${UrlPerfil}`);
+            setPaintings(response.data);
+        } catch (error) {
+            console.warn(error);
+            alert("Algo deu errado");
+        }
+    };
+
+    useEffect(() => {
+        getUsersPaintings();
+    }, []);
 
     return (
         <div>
@@ -184,11 +118,10 @@ function Perfil(){
                 <div className="infos_avatar">
                     <div className="container_perfil" >
                         <div className="avatar_nome">
-                            <Avatar alt="Avatar Aleatório" src="https://i.pinimg.com/564x/a8/44/05/a84405d543a674d448c64ac57f25a74a.jpg" style={{ height: '200px', width: '200px'}}/>
+                            <Avatar alt={nameUser} src={UrlPerfil} style={{ height: '200px', width: '200px'}}/>
                             <div className="textosPerfil">
-                                <Typography variant="h4" className="nomeUsuario">Nome do Usuário</Typography>
-                                <Typography variant="h5" className="infosPerfilMobile">Informações</Typography>
-
+                                <Typography variant="h4" className="nomeUsuario">{nameUser}</Typography>
+                                <Typography variant="h5" className="infosPerfilMobile">"{QuestionUser}"</Typography>
                             </div>
                         </div>
                     </div>
@@ -196,14 +129,14 @@ function Perfil(){
 
                 <Carousel infiniteLoop="true" showThumbs="" width="80%" className="carrossel_perf" showStatus="">
                         
-                    {pinturas.map((artes) => (
+                    {paintings.map((artes) => (
                     <div className="artsMuseu">
                     <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" />
                     </div>
                         ))}
                 </Carousel>
                     <div className="imgDisp">
-                    {pinturas.map((artes) => (
+                    {paintings.map((artes) => (
                         <div className="artsMuseu">
                         <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" />
                         </div>
@@ -212,7 +145,7 @@ function Perfil(){
             </div>
             <div className="infos_perf">
             <Typography variant="h4">Informações gerais</Typography>
-            <h1 className="infos2">njasdnjkasndjkasbdhasbdhasb</h1>
+            <h1 className="infos2">"{QuestionUser}"</h1>
             <br/>
             </div>
         </div>

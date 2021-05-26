@@ -78,8 +78,8 @@ function Menu(props){
     ]
 
     const nameUser = localStorage.getItem("nameUser");
-    const UrlPerfil = localStorage.getItem("url_perfil");
-    
+    const UrlPerfil = localStorage.getItem("UrlPerfil");
+    console.log(UrlPerfil);
     return (
         <>
             <AppBar position="static">
@@ -89,7 +89,8 @@ function Menu(props){
                     </IconButton>
                     <div className="Usuario">
                         <h5 className="Nome">{nameUser}</h5>
-                        <Avatar alt="Foto Aleatoria" src={UrlPerfil}/>
+                        {console.log(UrlPerfil)};
+                        <Avatar alt={nameUser} src={UrlPerfil}/>
                     </div>
                 </Toolbar>
             </AppBar>
@@ -100,7 +101,7 @@ function Menu(props){
                         return (
                             <ListItem 
                                 button
-                                onClick={()=> { handleClick(listItem.pathName);}}
+                                onClick={()=> { handleClick(listItem.pathName) }}
                                 selected={currentPage === listItem.pathName}
                                 >
                                 <IconContext.Provider value={{ color: "#343434", size: listItem.iconSize}}>

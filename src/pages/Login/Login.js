@@ -18,8 +18,10 @@ function Login() {
       alert(`Bem vindo ${response.data.user.name}`);
       loginn(response.data.acessToken);
       userId(response.data.user.user_id);
+      // console.log(response.data);
       localStorage.setItem("nameUser", response.data.user.name);
       localStorage.setItem("UrlPerfil", response.data.user.url_perfil);
+      localStorage.setItem("QuestionUser", response.data.user.question);
       history.push('/perfil');
     } catch (error){
       if(error.response.status === 400){

@@ -34,7 +34,8 @@ function Cadastro(){
         };
         try {
             const response = await api.post('/users', data);
-            alert(`Seu ID de acesso: ${response.data.user_id}`);
+            //alert(`Seu ID de acesso: ${response.data.user_id}`);
+            alert(`Cadastro feito com Sucesso: ${response.data.user.name}`);
             history.push("login");
         } catch (err) {
             alert('Erro no cadastro, tente novamente.');
