@@ -3,6 +3,8 @@ import React from "react";
 import Footer from "../Footer"
 import "./Home2.css"
 import { Carousel } from "react-responsive-carousel";
+import { useRef, useEffect } from "react";
+
 
 const pinturas = [
     {
@@ -24,7 +26,17 @@ const pinturas = [
   
   ];
 
-function Home2(){
+function Home2({location}){
+
+  const ref_objetivo = useRef();
+
+  useEffect(()=>{
+    const state = location.state;
+  
+    if(state === "objetivo")
+      ref_objetivo.current.scrollIntoView({behavior: "smooth"});
+     
+  }, [location])
 
     return (
         <div className="tudo_da_home2">
@@ -78,7 +90,7 @@ function Home2(){
             </div>
             </div>
             <div className="BorderLine2_home2"/>
-            <h1 className="titulo_baixo_home2">O Que é a Art One?</h1>
+            <h1 className="titulo_baixo_home2" ref={ref_objetivo}>O Que é a Art One?</h1>
             <h4 className="texto_baixo_home2">
   Essa é a Art One, a plataforma para que você pintor amador possa compartilhar suas obras e conhecer vários outros artistas do ramo.
   Aqui valorizamos e reconhecemos todas as formas de arte expressas por um pincel. Nesse sentido, buscamos unir a comunidade artística em um meio de simples uso, de diversidade de obras e colaboração. 
