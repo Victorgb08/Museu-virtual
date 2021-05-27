@@ -1,4 +1,4 @@
-import { Modal, Typography } from "@material-ui/core";
+import { List, Modal, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import Footer from "../Footer"
 import "./Home.css"
@@ -46,6 +46,7 @@ const pinturas = [
 function Home({location}){
 
   let [paintings, setPaintings] = useState([]);
+
   const [img, setImg] = useState();
   // const [open, setOpen] = useState(false);
   const ref_objetivo = useRef();
@@ -64,6 +65,9 @@ function Home({location}){
 
   function handleClick (image){
     setImg(image);
+    setPainting_id(image.painting_id);
+    getByIdPainting();
+    console.log(image.painting_id);
   }
 
   function handleClose (){
@@ -85,6 +89,24 @@ useEffect(() => {
     getAllPaintings();
 }, []);
 
+const [comment, setComment] = useState();
+const [painting_id, setPainting_id] = useState();
+
+
+async function postUserComments (){
+  const data = {painting_id, comment}
+  const response = await api.post(`/comments`, data)
+  console.log(response.data)
+};
+
+const [commentsById, setCommentsById] = useState([]);
+
+async function getByIdPainting (){
+  const response = await api.get(`/comments/${painting_id}`);
+  setCommentsById([...response.data]);
+  console.log(response)
+};
+
     return (
         <div className="tudo_da_home2">
           <Modal 
@@ -92,6 +114,7 @@ useEffect(() => {
             onClose={handleClose}
             className="modal_home"
           >
+            <List>
             <div className="total_modal">
               <div className="container_infos">
                 <div className="titulo_info">{img?.title}</div>
@@ -101,19 +124,23 @@ useEffect(() => {
               <img src={img?.src} alt={img?.alt} className="img_modal"/>
                 <Form>
                 <Form.Group controlId="comment"> 
-                    <Form.Control type="comentario" placeholder="Comentário" /> 
+                    <Form.Control type="comentario" placeholder="Comentário" onChange={(e)=>setComment(e.target.value)}/> 
                     <Form.Text className="text-muted"> 
                     </Form.Text> 
                 </Form.Group> 
                 </Form>
-                <Button variant="primary" type="submit" className="botoes_modal"> 
+                <Button variant="primary" type="submit" className="botoes_modal" onClick={postUserComments}> 
                   Enviar 
                 </Button>
             </div>
             <div className="container_comentarios">
-                <div/>
+              {commentsById.map((comentarios_especificos)=>(
+                <div className="comentarios_especificos">"{comentarios_especificos.comment}"</div>
+              ))}
+            <div/>
               </div>
             </div>
+            </List>
           </Modal>
           <div className="total_home2">
             <h1 className="titulo_home2">Art One</h1>

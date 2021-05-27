@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Perfil.css"
-import { Avatar, Drawer, IconButton, Link, List, Modal, Typography } from "@material-ui/core";
+import { Avatar, IconButton, Link, List, Modal, Typography } from "@material-ui/core";
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import SettingsIcon from '@material-ui/icons/Settings';
 //import Carousel from "react-bootstrap/Carousel"
@@ -16,27 +16,21 @@ import { useHistory } from "react-router-dom";
 function Perfil(){
 
     const IdUsusario = sessionStorage.getItem(USER_ID);
+
     let [paintings, setPaintings] = useState([]);
+
+
     const nameUser = localStorage.getItem("nameUser");
     const UrlPerfil = localStorage.getItem("UrlPerfil");
     const QuestionUser = localStorage.getItem("QuestionUser");
 
+
     const history = useHistory();
     const [open,setOpen]= useState(false);
     
-    const  [email, setEmail] = useState();
-    const  [password, setPassword] = useState();
-    // const newSenha = (e) => {setNewSenha(e.target.value)};
 
     function handleDrawer(isOpen){
         setOpen(isOpen);
-    }
-
-    async function updatePassword (e){
-        e.preventDefault();
-        const data = {password};
-        const response = await api.put(`/users/${IdUsusario}`,data);
-        console.log(data);    
     }
 
     async function getUsersPaintings(){
@@ -51,10 +45,6 @@ function Perfil(){
         }
     };
 
-    // useEffect(()=>{
-    //     updatePassword();
-    // }, [password]
-    // );
 
     useEffect(() => {
         getUsersPaintings();
@@ -69,7 +59,7 @@ function Perfil(){
                     <Form.Group controlId="formBasicEmail"> 
                         <h1>Mudar o Email</h1> 
                         <Form.Label>Email</Form.Label> 
-                        <Form.Control type="email" placeholder="Insira o novo email" onChange={(e)=>setEmail(e.target.value)}/> 
+                        <Form.Control type="email" placeholder="Insira o novo email" /> 
                         <Form.Text className="text-muted"> 
                         </Form.Text> 
                     </Form.Group> 
@@ -78,26 +68,23 @@ function Perfil(){
                     </Button> 
                     <br/>  
                         <h1>Mudar Senha</h1> 
-                    <Form.Group controlId="formBasicPassword"> 
-                        <Form.Label>Alterar a senha</Form.Label> 
-                        <form 
-                        onSubmit={updatePassword} > 
-                            <input
-                                placeholder="Nova senha"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                            />
-                            <button
-                             type="submit"
-                            >Enviar
-                            </button>
-                        </form>
+                        <Form.Group controlId="formBasicEmail"> 
+                        <Form.Label>Senha antiga</Form.Label> 
+                        <Form.Control type="password" placeholder="Insira senha atual" /> 
+                        <Form.Text className="text-muted"> 
+                        </Form.Text> 
                     </Form.Group> 
-                        {/* <Button variant="primary" type="submit" onClick={updatePassword} className="botoes_modal"> 
+                    <Form.Group controlId="formBasicEmail"> 
+                        <Form.Label>Nova senha</Form.Label> 
+                        <Form.Control type="email" placeholder="Insira a nova senha" /> 
+                        <Form.Text className="text-muted"> 
+                        </Form.Text> 
+                    </Form.Group> 
+                    <Button variant="primary" type="submit"  className="botoes_modal"> 
                             Enviar 
-                    </Button>  */}
-                    </Form> 
-                </List> 
+                    </Button>
+                    </Form>
+                </List>
             </Modal>
                 <div className="header">
                     <div className="botaoConfigContaPerfil" >
