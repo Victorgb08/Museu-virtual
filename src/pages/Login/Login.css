@@ -112,11 +112,6 @@
         align-items: center;
         justify-content: center;
         max-width: auto;
-        background:url("https://i.pinimg.com/originals/ae/ab/e5/aeabe54da1806324300ad9dba1f9c5a3.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-x: center;
-        background-position-y: center;
         overflow: auto;
     }
     

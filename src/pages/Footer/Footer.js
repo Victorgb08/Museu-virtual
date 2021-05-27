@@ -69,7 +69,7 @@ function Footer(){
                         Sobre nós 
                     </Link>
             
-                    <Link className="link_footer" to={{pathname: "home2", state:"objetivo"}}>
+                    <Link className="link_footer" to={{pathname: "home", state:"objetivo"}}>
                         Objetivo
                     </Link>
                     
@@ -81,7 +81,7 @@ function Footer(){
                         Contato
                     </Link>
 
-                    <Link className="link_footer" to="home2">
+                    <Link className="link_footer" to="home">
                         Home
                     </Link>
 

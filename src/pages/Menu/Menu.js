@@ -79,7 +79,7 @@ function Menu(props){
 
     const nameUser = localStorage.getItem("nameUser");
     const UrlPerfil = localStorage.getItem("UrlPerfil");
-    console.log(UrlPerfil);
+    // console.log(UrlPerfil);
     return (
         <>
             <AppBar position="static">

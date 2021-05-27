@@ -1,113 +1,133 @@
-import React, { useEffect, useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Modal, Typography } from "@material-ui/core";
+import React, { useState } from "react";
+import Footer from "../Footer"
+import "./Home.css"
 import { Carousel } from "react-responsive-carousel";
-import Footer from "../Footer";
-import "./Home.css";
-import { useHistory } from "react-router";
-import { Typography } from "@material-ui/core";
+import { useRef, useEffect } from "react";
+import { Form } from "react-bootstrap";
 
 
 const pinturas = [
-  {
-    id: 1,
-    name: "Pintura1",
-    src: "https://cdn.pixabay.com/photo/2020/02/05/13/02/waterfalls-4821153_960_720.jpg",
-    title: "Primeira Arte",
-    description: "A arte é o compo em que a razão se confunde",
-    alt: "Second slide",
-  },
-  {
-    id: 2,
-    name: "Pintura2",
-    src: "https://cdn.pixabay.com/photo/2013/07/19/00/18/splashing-165192_960_720.jpg",
-    title: "Segunda Arte",
-    description: "A arte é o compo em que a razão se confunde",
-    alt: "Thirth slide",
-  },
+    {
+      id: 1,
+      name: "Pintura1",
+      src: "https://cdn.pixabay.com/photo/2020/02/05/13/02/waterfalls-4821153_960_720.jpg",
+      title: "Primeira Arte",
+      description: "A arte é o compo em que a razão se confunde",
+      alt: "Second slide",
+    },
+    {
+      id: 2,
+      name: "Pintura2",
+      src: "https://cdn.pixabay.com/photo/2013/07/19/00/18/splashing-165192_960_720.jpg",
+      title: "Segunda Arte",
+      description: "A arte é o compo em que a razão se confunde",
+      alt: "Thirth slide",
+    },
+  
+  ];
 
-];
+function Home({location}){
 
+  const [img, setImg] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const ref_objetivo = useRef();
 
-function Home() {
-  var [dia, setDia] = useState();
-  useEffect(() => {
-    if (12 >= new Date().getHours() >= 1) {
-      setDia("manha");
-    } else if (17 >= new Date().getHours() >= 12) {
-      setDia("tarde");
-    } else if(0 >= new Date().getHours() >= 18){
-      setDia("noite");
+  console.log(location);
+
+  useEffect(()=>{
+    const state = location?.state;
+  
+    if(state){
+      ref_objetivo.current.scrollIntoView({behavior: "smooth"});
+      
     }
-  }, []);
+     
+  }, [location])
 
-  function setBackground() {
-    if (dia === "manha") {
-      return (
-        <div className="ImageDia">
-          <div className="textDia">
-            <h0> Bom dia Usuário </h0>
-          </div>
-        </div>
-      );
-    } else if (dia === "tarde") {
-      return (
-        <div className="ImageTarde">
-          <div className="textDia">
-            <h0> Boa tarde Usuário </h0>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="ImageNoite">
-          <div className="textDia">
-            <h0> Boa noite Usuário </h0>
-          </div>
-        </div>
-      );
-    }
+  function handleClick (image){
+    setImg(image);
+    setIsOpen(true);
   }
 
-  return (
-    <div className="total_home">
-      <div className="backgroundHome">
-        {setBackground()}
-        <div className="BorderLine" />
-        <Carousel
-          className="carrosselArts"
-          infiniteLoop="true"
-          showThumbs=""
-        >
-          {pinturas.map((artes) => (
-            <div className="artsMuseu">
-              <img name={artes.name} src={artes.src} alt={artes.alt} />
+    return (
+        <div className="tudo_da_home2">
+          <Modal 
+            open={ isOpen } 
+            onClose={()=> 
+            setIsOpen(false)}
+            className="modal_home"
+          >
+            <div className="container_modal">
+            <img src={img?.src} alt={img?.alt} className="img_modal"/>
+            <div className="container_comentarios">
+              <input
+              placeholder="comentario"
+              className="input_comentario"
+              />
             </div>
-          ))}
-        </Carousel>
+            </div>
+          </Modal>
+          <div className="total_home2">
+            <h1 className="titulo_home2">Art One</h1>
+            <h2 className="subtitulo_home2">"A arte está em todos os lugares para aqueles que enxergam a vida com amor."</h2>
+            <Carousel 
+                className="carrossel_home2"
+                infiniteLoop="true"
+                showThumbs=""
+                showStatus=""
+            >
+              {pinturas.map((artes) => (
+                <div className="artsMuseu" onClick={() => handleClick(artes)}>
+                  <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car_home2" />
+                </div>
+              ))}
 
-        <div className="BorderLineText" />
-        <p />
-        <Typography className="textHome">
-          <h1>O que é a Art One?</h1>
-          <p />
-          <p />
-          <h3>
-            Essa é a Art One, a plataforma para que você pintor amador possa
-            compartilhar suas obras e conhecer vários outros artistas do ramo.
-            Aqui valorizamos e reconhecemos todas as formas de arte expressas
-            por um pincel. Nesse sentido, buscamos unir a comunidade artística
-            em um meio de simples uso, de diversidade de obras e colaboração. É
-            essencial para a arte a colaboração entre aqueles que a praticam,
-            aqui na Digital Art permitimos que sua pintura seja compartilhada,
-            conhecida e valorizada com deve ser.
-          </h3>
-          <p />
-          <p />
-        </Typography>
-      </div>
-      <Footer/>
-    </div>
-  );
+            </Carousel>
+            <div className="BorderLine_home2" />
+            <div className="imagens_home2">
+            <div className="imagens_laterais1_home2">
+              <div className="pos_texto1">
+                <Typography className="texto_imagem1">
+                  “Tudo que você pode imaginar é real.” Pablo Picasso
+                </Typography>
+              </div>
+            </div>
+            <div className="container_img2">
+              <div className="container_texto2">
+              <Typography className="texto_img2">
+                “Eu invento tudo na minha pintura. E o que eu vi ou senti, eu estilizo.” TARSILA DO AMARA
+              </Typography>
+              </div>
+              <div className="imagens_laterais2_home2"/>
+            </div>
+            <div className="container_img3">
+              <div className="imagens_laterais3_home2"/>
+              <div className="container_texto3">
+                <Typography className="texto_img3">
+                “Eu sonho com minha pintura e pinto meu sonho.” VINCENT VAN GOGH
+                </Typography>
+              </div>
+            </div>
+            <div className="imagens_laterais4_home2">
+              <div className="pos_texto4">
+                <Typography className="texto_imagem4">
+                  “Um quadro só vive para quem o olha.”<br></br>PABLO PICASSO
+                </Typography>
+              </div>
+            </div>
+            </div>
+            <div className="BorderLine2_home2"/>
+            <h1 className="titulo_baixo_home2" ref={ref_objetivo}>O Que é a Art One?</h1>
+            <h4 className="texto_baixo_home2">
+  Essa é a Art One, a plataforma para que você pintor amador possa compartilhar suas obras e conhecer vários outros artistas do ramo.
+  Aqui valorizamos e reconhecemos todas as formas de arte expressas por um pincel. Nesse sentido, buscamos unir a comunidade artística em um meio de simples uso, de diversidade de obras e colaboração. 
+  É essencial para a arte a colaboração entre aqueles que a praticam, aqui na Art One permitimos que sua pintura seja compartilhada, conhecida e valorizada com deve ser.
+          </h4>
+          </div>
+          <Footer className="footer_home2"></Footer>
+        </div>
+    );
 }
 
 export default Home;

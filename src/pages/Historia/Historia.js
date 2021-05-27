@@ -49,9 +49,10 @@ const Accordion = withStyles({
 
 function Historia({location}){
 
-    const ref_SobreNos = useRef();
+  const ref_SobreNos = useRef();
   const ref_PergFreq = useRef();
   const ref_Contato = useRef();
+
 
   useEffect(()=>{
     const state = location.state;
