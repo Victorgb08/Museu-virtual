@@ -86,7 +86,8 @@ function Historia({location}){
                     Sobre nós
                 </h1>
                 <h2 className="his">
-                O cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa deleO cara tinha handtrap pra parar até o foguete chinês se fosse cair na casa dele
+                A Art One é uma idealização de quatro amigos de Minas Gerais. O projeto surgiu da necessidade que os 4 artistas tiveram de ter uma plataforma mais acessível e específica para divulgar suas pinturas. Em um período de pandemia, eles não podiam mais expor mais seus trabalhos em feiras e exposições, assim, queriam uma forma de se manter vivendo da arte, de ter seu trabalho valorizada. Aí nasceu o conceito de unidade com a arte, em que o grande propósito era reunir os pintores de diversas partes do Brasil e divulgar, compartilhar e integrar os mais diversos trabalhos na arte.
+Nós da Art One prezamos por um ambiente saudável e de muito aprendizado, permitimos que qualquer um acesse sua obra e dê feedbacks para que nós, enquanto comunidade, possamos crescer. Realizando o propósito inicial e que dá nome à nossa plataforma, nos unir em uma única arte.
                 </h2>
             </div>
             <div>

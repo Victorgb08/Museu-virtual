@@ -3,7 +3,7 @@ import {Select,MenuItem} from '@material-ui/core';
 import "./AddPainting.css";
 import { useHistory } from "react-router-dom";
 import api from "../../Services/api";
-import { USER_ID} from '../../Services/auth';
+import { USER_ID, TOKEN_KEY } from '../../Services/auth';
 import { Button } from "react-bootstrap";
 import { ImHome } from "react-icons/im";
 
@@ -15,6 +15,8 @@ function AddPainting(){
     const [category, setCategory] = useState('');
     const [width, setWidth] = useState('');
     const [height, setHeight] = useState('');
+    const user_id = sessionStorage.getItem(USER_ID);
+    const token = sessionStorage.getItem(TOKEN_KEY);
     const updateSelectWidth=(e)=>{
         setWidth(e.target.value)
     };
@@ -49,29 +51,34 @@ function AddPainting(){
     ];
     const history = useHistory();
 
-    function handleAdd(e){
-        history.push('/perfil');
-    }
-
-    // async function handleAdd(e){
-    //     e.preventDefault();
-    //     const data = {
-    //         name, 
-    //         address, 
-    //         email, 
-    //         password, 
-    //         question,
-    //         url_perfil,
-    //     };
-    //     try {
-    //         const response = await api.post('/users', data);
-    //         //alert(`Seu ID de acesso: ${response.data.user_id}`);
-    //         alert(`Cadastro feito com Sucesso: ${response.data.user.name}`);
-    //         history.push('/perfil');
-    //     } catch (err) {
-    //         alert('Erro no cadastro, tente novamente.');
-    //     }
+    // function handleAdd(e){
+    //     history.push('/perfil');
     // }
+
+    async function handleAdd(e){
+        e.preventDefault();
+        const data = {
+            user_id,
+            title, 
+            description, 
+            objective, 
+            src, 
+            category,
+            width,
+            height,
+        };
+        console.log(token);
+        try {
+            const config = {headers: {authorization: `Bearer ${token}`}};
+            const response = await api.post('/paintings', data);
+            //alert(`Seu ID de acesso: ${response.data.user_id}`);
+            alert(`Pintura adicionada com Sucesso!`);
+            history.push('/perfil');
+        } catch (err) {
+            console.log(err);
+            alert('Erro no cadastro da pintura, tente novamente.');
+        }
+    }
 
     return(
         <div>

@@ -17,11 +17,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color:rgba(255, 255, 255, 0.137) ;
+}
+
+.MuiBackdrop-root {
+  background-color: unset !important;
+}
+
+.total_modal {
+  display: flex;
+  flex-direction: row;
 }
 
 
 .container_modal {
   display: flex;
+  flex-direction: column;
 }
 
 .container_comentarios {

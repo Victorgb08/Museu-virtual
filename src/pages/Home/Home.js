@@ -4,8 +4,24 @@ import Footer from "../Footer"
 import "./Home.css"
 import { Carousel } from "react-responsive-carousel";
 import { useRef, useEffect } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+import api from "../../Services/api";
 
+
+const comentarios = [
+  {
+    id:1,
+    comentario: "Que legal"
+  },
+  {
+    id:2,
+    comentario: "Interessante"
+  },
+  {
+    id:3,
+    comentario: "Vamos trabalhar juntos!!"
+  },
+];
 
 const pinturas = [
     {
@@ -21,16 +37,17 @@ const pinturas = [
       name: "Pintura2",
       src: "https://cdn.pixabay.com/photo/2013/07/19/00/18/splashing-165192_960_720.jpg",
       title: "Segunda Arte",
-      description: "A arte é o compo em que a razão se confunde",
-      alt: "Thirth slide",
+      description: "A arte da natureza",
+      alt: "Third slide",
     },
   
   ];
 
 function Home({location}){
 
+  let [paintings, setPaintings] = useState([]);
   const [img, setImg] = useState();
-  const [isOpen, setIsOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const ref_objetivo = useRef();
 
   console.log(location);
@@ -47,25 +64,55 @@ function Home({location}){
 
   function handleClick (image){
     setImg(image);
-    setIsOpen(true);
   }
+
+  function handleClose (){
+    setImg(undefined);
+  }
+
+  async function getAllPaintings(){
+    try {
+        const response = await api.get("/paintings");
+        //console.log(response.data);
+        setPaintings([...response.data]);
+    } catch (error) {
+        console.warn(error);
+        alert("Algo deu errado");
+    }
+};
+
+useEffect(() => {
+    getAllPaintings();
+}, []);
 
     return (
         <div className="tudo_da_home2">
           <Modal 
-            open={ isOpen } 
-            onClose={()=> 
-            setIsOpen(false)}
+            open={ img !== undefined } 
+            onClose={handleClose}
             className="modal_home"
           >
+            <div className="total_modal">
+              <div className="container_infos">
+                <div className="titulo_info">{img?.title}</div>
+                <div className="descricao_info">{img?.description}</div>
+              </div>
             <div className="container_modal">
-            <img src={img?.src} alt={img?.alt} className="img_modal"/>
-            <div className="container_comentarios">
-              <input
-              placeholder="comentario"
-              className="input_comentario"
-              />
+              <img src={img?.src} alt={img?.alt} className="img_modal"/>
+                <Form>
+                <Form.Group controlId="comment"> 
+                    <Form.Control type="comentario" placeholder="Comentário" /> 
+                    <Form.Text className="text-muted"> 
+                    </Form.Text> 
+                </Form.Group> 
+                </Form>
+                <Button variant="primary" type="submit" className="botoes_modal"> 
+                  Enviar 
+                </Button>
             </div>
+            <div className="container_comentarios">
+                <div/>
+              </div>
             </div>
           </Modal>
           <div className="total_home2">
@@ -77,9 +124,9 @@ function Home({location}){
                 showThumbs=""
                 showStatus=""
             >
-              {pinturas.map((artes) => (
+              {paintings.map((artes) => (
                 <div className="artsMuseu" onClick={() => handleClick(artes)}>
-                  <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car_home2" />
+                  <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car_home2"/>
                 </div>
               ))}
 

@@ -92,7 +92,7 @@ function Pinturas(){
                                 views={paintings.map(x=>({
                                     ...x,
                                     srcset: x.srcSet,
-                                    caption: x.title
+                                    caption: x.description,
                                 }))}
                             />
                         </Modal>

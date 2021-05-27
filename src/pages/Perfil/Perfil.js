@@ -25,40 +25,24 @@ function Perfil(){
     const [open,setOpen]= useState(false);
     
     const  [email, setEmail] = useState();
-    const  [senha, setSenha] = useState();
-    const [nova_senha, setNova_senha]= useState();
+    const  [password, setPassword] = useState();
+    // const newSenha = (e) => {setNewSenha(e.target.value)};
 
     function handleDrawer(isOpen){
         setOpen(isOpen);
     }
-    function alterar_email () {
-        alert("Novo email: " + email);
-    }
-    function alterar_senha () {
-        alert ("Senha antiga: "+ senha + "\nNova Senha: " + nova_senha)
-    }
 
-    const params = {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true
-        },
-        pagination: {
-            el: '.swiper-pagination'
-          }
+    async function updatePassword (e){
+        e.preventDefault();
+        const data = {password};
+        const response = await api.put(`/users/${IdUsusario}`,data);
+        console.log(data);    
     }
 
     async function getUsersPaintings(){
         try {
             console.log(`A question do usuario é: ${QuestionUser}`);
-            const response = await api.get(`/paintings?${IdUsusario}`);
+            const response = await api.get(`/paintings/${IdUsusario}`);
             console.log(`O url de perfil é: ${UrlPerfil}`);
             setPaintings(response.data);
         } catch (error) {
@@ -66,6 +50,11 @@ function Perfil(){
             alert("Algo deu errado");
         }
     };
+
+    // useEffect(()=>{
+    //     updatePassword();
+    // }, [password]
+    // );
 
     useEffect(() => {
         getUsersPaintings();
@@ -84,22 +73,29 @@ function Perfil(){
                         <Form.Text className="text-muted"> 
                         </Form.Text> 
                     </Form.Group> 
-                    <Button variant="primary" type="submit" onClick={alterar_email} className="botoes_modal"> 
+                    <Button variant="primary" type="submit"  className="botoes_modal"> 
                             Enviar 
                     </Button> 
-                    <br/> 
-                    <Form.Group controlId="formBasicPassword"> 
+                    <br/>  
                         <h1>Mudar Senha</h1> 
-                        <Form.Label>Senha atual</Form.Label> 
-                        <Form.Control type="password" placeholder="Senha" onChange={(e)=>setSenha(e.target.value)}/> 
-                    </Form.Group> 
                     <Form.Group controlId="formBasicPassword"> 
                         <Form.Label>Alterar a senha</Form.Label> 
-                        <Form.Control type="password" placeholder="Nova Senha" onChange={(e)=>setNova_senha(e.target.value)} /> 
+                        <form 
+                        onSubmit={updatePassword} > 
+                            <input
+                                placeholder="Nova senha"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <button
+                             type="submit"
+                            >Enviar
+                            </button>
+                        </form>
                     </Form.Group> 
-                        <Button variant="primary" type="submit" onClick={alterar_senha} className="botoes_modal"> 
+                        {/* <Button variant="primary" type="submit" onClick={updatePassword} className="botoes_modal"> 
                             Enviar 
-                    </Button> 
+                    </Button>  */}
                     </Form> 
                 </List> 
             </Modal>

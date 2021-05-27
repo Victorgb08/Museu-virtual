@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { ImHome } from "react-icons/im";
 import { useHistory } from "react-router-dom";
 import api from '../../Services/api';
@@ -19,7 +19,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const history = useHistory();
   const [currentPage, setCurrentPage] = useState("/home");
-    const [open, setOpen] = useState(false);   
+  const [open, setOpen] = useState(false);   
     
     const menuPages = [
         {

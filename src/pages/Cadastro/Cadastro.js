@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./Cadastro.css";
 import { ImHome } from "react-icons/im";
 import { BiCommentAdd } from "react-icons/bi";
