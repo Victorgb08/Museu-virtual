@@ -71,6 +71,35 @@ function Perfil(){
 
     }
 
+    const [img, setImg] = useState();
+    const [comment, setComment] = useState();
+    const [painting_id, setPainting_id] = useState();
+
+    function handleClick (image){
+    setImg(image);
+    setPainting_id(image.painting_id);
+    getByIdPainting();
+    console.log(image.painting_id);
+    }
+
+    async function getByIdPainting (){
+        const response = await api.get(`/comments/${painting_id}`);
+        setCommentsById([...response.data]);
+        // console.log(response)
+      };
+
+    const [commentsById, setCommentsById] = useState([]);
+
+    async function postUserComments (){
+        const data = {painting_id, comment}
+        const response = await api.post(`/comments`, data)
+        console.log(response.data)
+    };
+
+    function handleClose (){
+        setImg(undefined);
+      }  
+
     return (
         <div>
         <div className="total_perfil">
@@ -96,6 +125,39 @@ function Perfil(){
                     </Form>
                 </List>
             </Modal>
+            <Modal 
+            open={ img !== undefined } 
+            onClose={handleClose}
+            className="modal_home"
+          >
+            <List>
+            <div className="total_modal">
+              <div className="container_infos">
+                <div className="titulo_info">{img?.title}</div>
+                <div className="descricao_info">{img?.description}</div>
+              </div>
+            <div className="container_modal">
+              <img src={img?.src} alt={img?.alt} className="img_modal"/>
+                <Form>
+                <Form.Group controlId="comment"> 
+                    <Form.Control type="comentario" placeholder="Comentário" onChange={(e)=>setComment(e.target.value)}/> 
+                    <Form.Text className="text-muted"> 
+                    </Form.Text> 
+                </Form.Group> 
+                </Form>
+                <Button variant="primary" type="submit" className="botoes_modal" onClick={postUserComments}> 
+                  Enviar 
+                </Button>
+            </div>
+            <div className="container_comentarios">
+              {commentsById.map((comentarios_especificos)=>(
+                <div className="comentarios_especificos">"{comentarios_especificos.comment}"</div>
+              ))}
+            <div/>
+              </div>
+            </div>
+            </List>
+          </Modal>
                 <div className="header">
                     <div className="botaoConfigContaPerfil" >
                     <Link
@@ -142,15 +204,15 @@ function Perfil(){
                 <Carousel infiniteLoop="true" showThumbs="" width="80%" className="carrossel_perf" showStatus="">
                         
                     {paintings.map((artes) => (
-                    <div className="artsMuseu">
+                    <div className="artsMuseu" onClick={() => handleClick(artes)} >
                     <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" />
                     </div>
                         ))}
                 </Carousel>
-                    <div className="imgDisp">
+                    <div className="imgDisp" >
                     {paintings.map((artes) => (
                         <div className="artsMuseu">
-                        <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" />
+                        <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car" onClick={() => handleClick(artes)} />
                         </div>
                             ))}
                     </div>

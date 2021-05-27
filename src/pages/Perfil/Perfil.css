@@ -216,6 +216,25 @@
     .imgDisp {
         display: none;
     }
+
+    .img_modal {
+        height: 150px;
+        width: 150px;
+    }
+    .titulo_info {
+        font-size: 30px !important;
+
+      }
+      
+      .descricao_info {
+        font-size: 10px !important;
+        color: #ffffff;
+      }
+      .total_modal {
+        display: flex;
+        flex-direction: column;
+      }
+
 }
 
 @media only screen and (max-width:335px){

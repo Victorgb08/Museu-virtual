@@ -8,40 +8,6 @@ import { Button, Form } from "react-bootstrap";
 import api from "../../Services/api";
 
 
-const comentarios = [
-  {
-    id:1,
-    comentario: "Que legal"
-  },
-  {
-    id:2,
-    comentario: "Interessante"
-  },
-  {
-    id:3,
-    comentario: "Vamos trabalhar juntos!!"
-  },
-];
-
-const pinturas = [
-    {
-      id: 1,
-      name: "Pintura1",
-      src: "https://cdn.pixabay.com/photo/2020/02/05/13/02/waterfalls-4821153_960_720.jpg",
-      title: "Primeira Arte",
-      description: "A arte é o compo em que a razão se confunde",
-      alt: "Second slide",
-    },
-    {
-      id: 2,
-      name: "Pintura2",
-      src: "https://cdn.pixabay.com/photo/2013/07/19/00/18/splashing-165192_960_720.jpg",
-      title: "Segunda Arte",
-      description: "A arte da natureza",
-      alt: "Third slide",
-    },
-  
-  ];
 
 function Home({location}){
 
@@ -117,7 +83,7 @@ async function getByIdPainting (){
             <List>
             <div className="total_modal">
               <div className="container_infos">
-                <div className="titulo_info">{img?.title}</div>
+                <div className="titulo_info_home">{img?.title}</div>
                 <div className="descricao_info">{img?.description}</div>
               </div>
             <div className="container_modal">
@@ -133,7 +99,7 @@ async function getByIdPainting (){
                   Enviar 
                 </Button>
             </div>
-            <div className="container_comentarios">
+            <div className="container_comentarios_home">
               {commentsById.map((comentarios_especificos)=>(
                 <div className="comentarios_especificos">"{comentarios_especificos.comment}"</div>
               ))}

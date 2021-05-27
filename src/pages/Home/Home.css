@@ -30,13 +30,18 @@
   flex-direction: row;
 }
 
+.botoes_modal {
+  background-color: darkred !important;
+  color: #ffffff !important;
+}
+
 
 .container_modal {
   display: flex;
   flex-direction: column;
 }
 
-.titulo_info {
+.titulo_info_home {
   font-size: 50px;
   color: #ffffff;
   margin-right: 20px;
@@ -47,12 +52,12 @@
   color: #ffffff;
 }
 
-.container_comentarios {
+.container_comentarios_home {
   display: grid;
   width: 30%;
   align-items: center;
   justify-items: center;
-  overflow: auto;
+  overflow-y: auto;
   padding:10px;
   grid-row-gap: 10px;
 }
@@ -388,6 +393,20 @@
 
   .texto_imagem4 {
     font-size: 15px !important;
+  }
+
+  .total_modal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container_comentarios_home {
+    width: unset !important;
+  }
+
+  .titulo_info_home {
+    margin-top: 100px !important;
+    color: #FFFFFF;
   }
 }
 
