@@ -7,52 +7,51 @@ import "./Pinturas.css";
 
 const OpcaoCategories = [
     {
-        name: "releitura",
+        name: "Raposa",
         id: 1,
     },
     {
-        name: "exuberante",
+        name: "dsadas",
         id: 2,
     },
 ];
 
 function Pinturas(){
     //let [pinturaReserva, setPinturaReserva] = useState();
-    let [paintings, setPaintings] = useState([]);
+    const [paintings, setPaintings] = useState([]);
     const [categoria, setCategoria] = useState("all");
     const updateSelectCateg=(e)=>{
         setCategoria(e.target.value)
     };
     const all = "all";
 
-    const [currentImage, setCurrentImage] = useState(0);
-    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+    // const [currentImage, setCurrentImage] = useState(0);
+    // const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-    const openLightbox = useCallback((event, { photo, index }) => {
-        setCurrentImage(index);
-        setViewerIsOpen(true);
-    }, []);
+    // const openLightbox = useCallback((event, { photo, index }) => {
+    //     setCurrentImage(index);
+    //     setViewerIsOpen(true);
+    // }, []);
 
-    const closeLightbox = () => {
-        setCurrentImage(0);
-        setViewerIsOpen(false);
-    };
+    // const closeLightbox = () => {
+    //     setCurrentImage(0);
+    //     setViewerIsOpen(false);
+    // };
 
-    function buscarPorCategoria(value){
-        if(value.category === categoria){
-            return value;
-            console.log([value]);
-        }
-    };
+    // function imagens(){
+    //     console.log({paintings});
+    //     return paintings;
+    // }
 
     //Função para montar o componente que vai ta com as imagens do backEnd
     async function getAllPaintings(){
         try {
             if(categoria !== all){
                 const response = await api.get("/paintings");
-                const novo = response.data.filter((todaspinturas) => todaspinturas.category === categoria);
-                console.log(novo, categoria);
-                setPaintings([novo]);
+                const novo = response.data.filter((filtrados)=> filtrados.category === categoria);
+                // console.log(novo);
+                // console.log(response.data);
+                setPaintings(novo);
             } else{
                 const response = await api.get("/paintings");
                 //console.log(response.data);
@@ -64,9 +63,6 @@ function Pinturas(){
         }
     };
 
-    useEffect(() => {
-        getAllPaintings();
-    }, []);
     
     useEffect(() => {
         getAllPaintings();
@@ -83,21 +79,14 @@ function Pinturas(){
                     ))}
             </Select>
             <div className="teste">
-                <Gallery margin={80} photos={paintings} onClick={openLightbox} />
-                <ModalGateway>
-                    {viewerIsOpen ? (
-                        <Modal onClose={closeLightbox}>
-                            <Carousel
-                                currentIndex={currentImage}
-                                views={paintings.map(x=>({
-                                    ...x,
-                                    srcset: x.srcSet,
-                                    caption: x.description,
-                                }))}
-                            />
-                        </Modal>
-                    ) : null}
-                </ModalGateway>
+                {/* <Gallery margin={80} photos={imagens()} /> */}
+                <div className="imgDisp_pinturas">
+                    {paintings.map((artes) => (
+                        <div className="artsMuseu_pinturas">
+                        <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car_pinturas" />
+                        </div>
+                            ))}
+                    </div>
             </div>  
         </div>
     );

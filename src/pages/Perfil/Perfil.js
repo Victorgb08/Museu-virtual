@@ -50,37 +50,47 @@ function Perfil(){
         getUsersPaintings();
     }, []);
 
+
+    const [password, setPassword] = useState();
+
+    const [oldPassword, setOldPassword]= useState();
+
+    async function getUserPassword() {
+        const result = await api.get(`/users/${IdUsusario}`);
+        return result.data;
+    }
+
+    async function updatePassword (e){
+        e.preventDefault();
+        const x = await getUserPassword();
+        console.log(x.password);
+        if (x.password === oldPassword)
+            await api.put(`/users/${IdUsusario}`, {password});
+        else 
+            alert("deu ruim");
+
+    }
+
     return (
         <div>
         <div className="total_perfil">
         <Modal open={ open } onClose={()=> handleDrawer(false)} className="modal_perf"> 
                 <List > 
                     <Form className="form_perf"> 
-                    <Form.Group controlId="formBasicEmail"> 
-                        <h1>Mudar o Email</h1> 
-                        <Form.Label>Email</Form.Label> 
-                        <Form.Control type="email" placeholder="Insira o novo email" /> 
-                        <Form.Text className="text-muted"> 
-                        </Form.Text> 
-                    </Form.Group> 
-                    <Button variant="primary" type="submit"  className="botoes_modal"> 
-                            Enviar 
-                    </Button> 
-                    <br/>  
                         <h1>Mudar Senha</h1> 
-                        <Form.Group controlId="formBasicEmail"> 
+                        <Form.Group controlId="password"> 
                         <Form.Label>Senha antiga</Form.Label> 
-                        <Form.Control type="password" placeholder="Insira senha atual" /> 
+                        <Form.Control type="password" placeholder="Insira senha atual"  onChange={(e)=>setOldPassword(e.target.value)}/>
                         <Form.Text className="text-muted"> 
                         </Form.Text> 
                     </Form.Group> 
-                    <Form.Group controlId="formBasicEmail"> 
+                    <Form.Group controlId="password"> 
                         <Form.Label>Nova senha</Form.Label> 
-                        <Form.Control type="email" placeholder="Insira a nova senha" /> 
+                        <Form.Control type="password" placeholder="Insira a nova senha" onChange={(e)=>setPassword(e.target.value)} /> 
                         <Form.Text className="text-muted"> 
                         </Form.Text> 
                     </Form.Group> 
-                    <Button variant="primary" type="submit"  className="botoes_modal"> 
+                    <Button variant="primary" type="submit"  className="botoes_modal" onClick={updatePassword}> 
                             Enviar 
                     </Button>
                     </Form>

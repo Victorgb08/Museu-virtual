@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(darkred,#f41c358f,#fc2e008f, #ec7e108f, #f69d0d8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f, darkred);
+    min-height: 100vh;
     /*background-image: url("https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg"); 
     background-repeat: no-repeat;
     background-size: cover; */
