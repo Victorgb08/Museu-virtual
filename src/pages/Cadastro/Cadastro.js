@@ -12,6 +12,7 @@ import { IoLogIn } from "react-icons/io5";
 import { Drawer, IconButton, List, ListItem, ListItemText, Typography } from "@material-ui/core";
 import { IconContext } from "react-icons/lib";
 import api from '../../Services/api';
+import { FiMenu } from "react-icons/fi";
 
 function Cadastro(){
     const [name, setName] = useState('');
@@ -103,7 +104,9 @@ function Cadastro(){
 
     return(
         <div className="FundoTelaCadastro">
-            <IconButton edge="start" color="inherit" aria-label="menu" onClick={()=>handleDrawer(!open)}></IconButton>
+            <div className="button_cad">
+            <IconButton color="inherit" aria-label="menu" onClick={()=>handleDrawer(!open)} ><FiMenu/></IconButton>
+            </div>
             <Drawer open={open} onClose={()=> handleDrawer(false)}>
                 <List className="list">
                     {menuPages.map((listItem) => {

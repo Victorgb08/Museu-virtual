@@ -5,11 +5,76 @@ import { useHistory } from "react-router-dom";
 import api from '../../Services/api';
 import { loginn, userId} from '../../Services/auth';
 import "./Login.css";
+import {IconButton, Drawer, List, ListItem, ListItemText, Typography} from "@material-ui/core";
+import { IconContext } from "react-icons/lib";
+import { MdFilterFrames, MdHome, MdInfo } from "react-icons/md";
+import { BiCommentAdd } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { GoSignIn } from "react-icons/go";
+import { IoLogIn } from "react-icons/io5";
+import { FiMenu } from "react-icons/fi";
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
+  const [currentPage, setCurrentPage] = useState("/home");
+    const [open, setOpen] = useState(false);   
+    
+    const menuPages = [
+        {
+            pathName: "/home",
+            icon: <MdHome /> ,
+            text: " Home",
+            iconSize: "1.5em",
+        },
+        {
+            pathName: "/login",
+            icon: <IoLogIn /> ,
+            text: " Login",
+            iconSize: "1.5em",
+        },
+        {
+            pathName: "/cadastro",
+            icon: <GoSignIn /> ,
+            text: " Cadastre-se",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/perfil",
+            icon: <CgProfile />,
+            text: " Perfil",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/pinturas",
+            icon: <MdFilterFrames />,
+            text: " Pinturas",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/maiscomentadas",
+            icon: <BiCommentAdd />,
+            text: " Mais Comentadas",
+            iconSize: "1.4em",
+        },
+        {
+            pathName: "/footer",
+            icon: <MdInfo />,
+            text: " Footer",
+            iconSize: "1.4em",
+        }
+    ]
+
+    function handleClick(pathName){
+        history.push(pathName);
+        setCurrentPage(pathName);
+    }
+
+    function handleDrawer(abrir){
+        setOpen(abrir);
+
+    }
 
   async function handleLogin(e){
     e.preventDefault();
@@ -36,6 +101,29 @@ function Login() {
   
   return (
     <div className="total_login">
+      <div className="button_log">
+            <IconButton color="inherit" aria-label="menu" onClick={()=>handleDrawer(!open)} ><FiMenu/></IconButton>
+            </div>
+            <Drawer open={open} onClose={()=> handleDrawer(false)}>
+                <List className="list">
+                    {menuPages.map((listItem) => {
+                        return (
+                            <ListItem 
+                                button
+                                onClick={()=> { handleClick(listItem.pathName);}}
+                                selected={currentPage === listItem.pathName}
+                                >
+                                <IconContext.Provider value={{ color: "#343434", size: listItem.iconSize}}>
+                                    {listItem.icon}
+                                </IconContext.Provider>
+                                <ListItemText className="listItemText">
+                                    <Typography>{listItem.text}</Typography>
+                                </ListItemText>
+                            </ListItem>
+                        )
+                    })}
+                </List>
+            </Drawer>
       <div className="base_login">
         <div className="conteiner_login">
           <div className="contentLogin">

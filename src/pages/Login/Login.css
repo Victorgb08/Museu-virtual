@@ -1,6 +1,8 @@
 .total_login{
     height:100vh;
     width: 100vw;
+    background: linear-gradient(#ffb90893,#dc2e0298);
+
     overflow: auto;
 }
 
@@ -10,7 +12,6 @@
     align-items: center;
     justify-content: center;
     max-width: auto;
-    background: linear-gradient(#ffb90893,#dc2e0298);
     overflow: auto;
 }
 
