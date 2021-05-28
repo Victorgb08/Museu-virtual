@@ -44,6 +44,9 @@ function Home({location}){
     try {
         const response = await api.get("/paintings");
         //console.log(response.data);
+        response.data.sort(function(x,y){
+          return y.count - x.count;
+        })
         setPaintings([...response.data]);
     } catch (error) {
         console.warn(error);

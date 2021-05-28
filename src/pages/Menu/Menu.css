@@ -21,6 +21,14 @@
   background: linear-gradient(black, darkred);
 }
 
+.textDia{
+  margin-right: 8px;
+}
+
+.bemvindo {
+  margin-right: 8px;
+}
+
 .StyleMenu {
   background-image: linear-gradient(
     to bottom,

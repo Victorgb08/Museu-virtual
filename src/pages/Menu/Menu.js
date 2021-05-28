@@ -70,56 +70,48 @@ function Menu(props) {
       text: " Pinturas",
       iconSize: "1.4em",
     },
-    {
-      pathName: "/maiscomentadas",
-      icon: <BiCommentAdd />,
-      text: " Mais Comentadas",
-      iconSize: "1.4em",
-    },
-    {
-      pathName: "/footer",
-      icon: <MdInfo />,
-      text: " Footer",
-      iconSize: "1.4em",
-    },
   ];
 
   const nameUser = localStorage.getItem("nameUser");
   const UrlPerfil = localStorage.getItem("UrlPerfil");
 
   // Mensagem de Bom ... usuário
-  var [dia, setDia] = useState();
-  useEffect(() => {
-    if (12 >= new Date().getHours() >= 1) {
-      setDia("manha");
-    } else if (17 >= new Date().getHours() >= 12) {
-      setDia("tarde");
-    } else if (0 >= new Date().getHours() >= 18) {
-      setDia("noite");
-    }
-  }, []);
+  // let [dia, setDia] = useState();
+  // var data = new Date();
+  // useEffect(() => {
+  //   console.log(data.getHours());
+  //   if (data.getHours() >= 18) {
+  //     setDia("noite");
+  //   }
+  //   else if ( 18 > data.getHours() >= 12){
+  //     setDia("tarde");
+  //   }
+  //   else if(4 < data.getHours()< 12){
+  //     setDia("manha");
+  //   }
+  // }, []);
 
-  function setBackground() {
-    if (dia === "manha") {
-      return (
-        <div className="textDia">
-          <h0> Bom dia </h0>
-        </div>
-      );
-    } else if (dia === "tarde") {
-      return (
-        <div className="textDia">
-          <h0> Boa tarde </h0>
-        </div>
-      );
-    } else {
-      return (
-        <div className="textDia">
-          <h0> Boa noite </h0>
-        </div>
-      );
-    }
-  }
+  // function setBackground() {
+  //   if (dia === "manha") {
+  //     return (
+  //       <div className="textDia">
+  //         <h5> Bom dia, </h5>
+  //       </div>
+  //     );
+  //   } else if (dia === "tarde") {
+  //     return (
+  //       <div className="textDia">
+  //         <h5> Boa tarde, </h5>
+  //       </div>
+  //     );
+  //   } else if (dia === "noite") {
+  //     return (
+  //       <div className="textDia">
+  //         <h5> Boa noite, </h5>
+  //       </div>
+  //     );
+  //   }
+  // }
 
   return (
     <>
@@ -134,7 +126,7 @@ function Menu(props) {
             <FiMenu />
           </IconButton>
           <div className="Usuario">
-            {setBackground()}
+            <h5 className="bemvindo">Olá</h5>
 
             <h5 className="Nome">{nameUser}</h5>
 

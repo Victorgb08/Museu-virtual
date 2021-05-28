@@ -4,7 +4,6 @@ import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import Pinturas from "./pages/Pinturas";
 import Perfil from "./pages/Perfil";
-import MaisComentadas from "./pages/MaisComentadas";
 import Footer from "./pages/Footer";
 import Menu from "./pages/Menu";
 import Historia from "./pages/Historia";
@@ -30,10 +29,8 @@ function UserMenu(){
     return(
         <Menu>
             <Switch>
-                {/* <Route path="/home" component={Home}/> */}
                 <Route path="/home" component={Home}/>
                 <Route path="/pinturas" component={Pinturas}/>
-                <Route path="/maiscomentadas" component={MaisComentadas}/>
                 <Route path="/historia" component={Historia}/>
                 <Route path="/perfil" component={Perfil}/>
                 <Route component={()=><Redirect to="/home" />}/>

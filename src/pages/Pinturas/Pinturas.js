@@ -64,7 +64,6 @@ function Pinturas(){
     async function getAllPaintings(){
         try {
             if(categoria === "Mais Comentadas"){
-                console.log("2")
                 const response = await api.get("/paintings");
                 response.data.sort(function(x,y){
                     return y.count - x.count;
@@ -74,7 +73,6 @@ function Pinturas(){
             }
             
             else if(categoria !== all){
-                console.log("1")
                 const response = await api.get("/paintings");
                 console.log(response.data);
                 const novo = response.data.filter((filtrados)=> filtrados.category === categoria);
@@ -83,7 +81,6 @@ function Pinturas(){
                 setPaintings(novo);
             } 
             else{
-                console.log("3")
                 const response = await api.get("/paintings");
                 //console.log(response.data);
                 setPaintings([...response.data]);
