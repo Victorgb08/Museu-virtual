@@ -21,6 +21,7 @@
     justify-content: center;
 }
 
+
 .containercadastro{
     display: flex;
     flex-direction: column;
@@ -29,14 +30,76 @@
     justify-items: center;
     flex-grow: 1;
     background: #beb9b92a;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 2cm;
 }
 
+.contentcadastro{
+    width: 100%;
+    padding: 10px;
+    margin-left: 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentcadastro section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentcadastro section p{
+    font-size: 15px;
+    color: #dc2e02;
+    width: 80%;
+    text-align: center;
+}
+
+.contentcadastro form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.contentcadastro form input{
+    margin-top: 8px;
+    height: 35px;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.buttonCadastro{
+    width: 100%;
+    height: 35px;
+    background: #D00000;
+    border: 1px solid #D00000;
+    border-radius: 8px;
+    color: white;
+    margin-top: 8px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    transition: filter 0.2s;
+}
+
+.buttonCadastro:hover {
+    filter: brightness(70%);
+}
+
+/* 
 .forms_cad {
    max-height: 500px  !important;
-}
+} */
 
 .titulocadastro{
     font-size: 400%;

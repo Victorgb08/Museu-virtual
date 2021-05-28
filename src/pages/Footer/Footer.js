@@ -65,21 +65,26 @@ function Footer(){
             <div className="guia_footer">
             
                 <div className="base_footer">
-                    <Link className="link_footer" to="login">
-                        Quem somos?
+                <Link className="link_footer" to={{pathname: "historia", state:"sobreNos"}}>
+                        Sobre nós 
                     </Link>
-                    <Link className="link_footer" to="login">
+            
+                    <Link className="link_footer" to={{pathname: "home", state:"objetivo"}}>
                         Objetivo
                     </Link>
-                    <Link className="link_footer" to="login">
-                        Perguntas frequentes?
+                    
+                    <Link className="link_footer" to={{pathname: "historia", state:"pergFreq"}}>
+                        Perguntas frequentes
                     </Link>
-                    <Link className="link_footer"  to="login">
+
+                    <Link className="link_footer" to={{pathname: "historia", state:"Contate_Nos"}}>
                         Contato
                     </Link>
-                    <Link className="link_footer"  to="home">
+
+                    <Link className="link_footer" to="home">
                         Home
                     </Link>
+
                     <Link className="link_footer"  to="cadastro">
                         Cadastro
                     </Link>

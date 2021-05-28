@@ -2,29 +2,58 @@
 .total_perfil {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(#f41c358f,#fc2e008f, #ec7e108f, #f69d0d8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f);
-    position: absolute;
+    background: linear-gradient(darkred,#f41c358f,#fc2e008f, #ec7e108f, #f69d0d8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f,#FFBC0A8f, darkred);
+    min-height: 100vh;
     /*background-image: url("https://image.freepik.com/vetores-gratis/bokeh-cintilante-amarelo-brilha-fundo-bonito-design_1017-24777.jpg"); 
     background-repeat: no-repeat;
     background-size: cover; */
 }
 
 .header {
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     position: relative;
 }
 
+.modal_perf { 
+    display: flex; 
+    align-self: center; 
+    justify-self: center; 
+    justify-content: center; 
+    align-items: center !important; 
+    overflow-y: auto;
+} 
+ 
+.form_perf { 
+    background-color: darkred; 
+    padding: 5%; 
+    border-radius: 1.5rem; 
+    width: 350px; 
+} 
+ 
+ 
+.form_perf h1 { 
+    color: white; 
+} 
+ 
+.form-label { 
+    color: white; 
+} 
+ 
+.botoes_modal { 
+    background-color:#03071E !important; 
+    border-color: white !important; 
+} 
+
+
 .perfil_section {
     background-color: rgba(255, 255, 255, 0.287);
     border-radius: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
     padding-top: 20px;
     padding-bottom: 20px; 
 }
@@ -47,8 +76,12 @@
     display: none;
 }
 
-.botao {
+.botaoConfigContaPerfil {
     margin-left: auto;
+}
+
+.botaoAddPainting{
+    margin-left: auto;    
 }
 
 .container_perfil {
@@ -72,6 +105,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 8px;
 }
 
 .carrossel_perf {
@@ -83,20 +117,73 @@
 }
 
 .image_car {
-    height: 220px;
+    height: 250px;
+    max-height: 250px;
     object-fit: cover;
     object-position: center center;
-    width: 300px;
+    width: 80%;
     border-radius: 0.9cm;
+    align-self: center;
+}
+
+.artsMuseu {
+    display: grid;
+    justify-items: center;
 }
 
 .imgDisp {
-    display: flex;
+    display: grid;
     margin-top: 30px;
-    flex-direction: row;
-    justify-content: space-evenly;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(3,minmax(250px,1fr));
+    align-items: center;
+    justify-items: center;
 }
 
+.infosPerfilDesktop {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+}
+
+.BorderLine_Perfil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 3px;
+  width: 88%;
+  margin-top: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  align-self:center;
+}
+
+.infos2 {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.swiper-container {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+.img_modal {
+    max-height: 500px;
+}
+
+.titulo_info {
+    color: white;
+
+  }
+
+  .container_comentarios {
+    max-height: 500px;
+    overflow:auto;
+}
 
 @media only screen and (max-width: 970px){
     .header {
@@ -111,6 +198,8 @@
 
     .perfil_section {
         align-content: center;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
     .infosPerfil {
@@ -129,6 +218,8 @@
         position: relative;
     }
 
+    
+
     .carrossel_perf {
         width: 300px;
         justify-self: center !important;
@@ -141,6 +232,26 @@
     .imgDisp {
         display: none;
     }
+
+    .img_modal {
+        height: 150px;
+        width: 150px;
+    }
+    .titulo_info {
+        font-size: 30px !important;
+        color: white;
+
+      }
+      
+      .descricao_info {
+        font-size: 10px !important;
+        color: #ffffff;
+      }
+      .total_modal {
+        display: flex;
+        flex-direction: column;
+      }
+
 }
 
 @media only screen and (max-width:335px){
@@ -156,7 +267,8 @@
     }
 
     .perfil_section {
-        max-height: 450px;
+        max-height: 550px;
+
     }
 }
 

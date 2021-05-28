@@ -1,6 +1,8 @@
 .total_login{
     height:100vh;
     width: 100vw;
+    background: linear-gradient(#ffb90893,#dc2e0298);
+
     overflow: auto;
 }
 
@@ -10,7 +12,6 @@
     align-items: center;
     justify-content: center;
     max-width: auto;
-    background: linear-gradient(#ffb90893,#dc2e0298);
     overflow: auto;
 }
 
@@ -23,29 +24,79 @@
     flex-grow: 1;
     height: 400px;
     background: #beb9b92a;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 1cm;
     margin-top: 20px;
 }
 
 
-.inputs_login {
-   display: flex;
-   margin-left: 32px;
-   margin-right: 32px;
-   flex-direction: column;
-   position: relative;
-   
+.contentLogin section{
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 
-.loginButton_login {
-    background-color: #D00000 !important;
+.contentLogin form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-left: 15px;
+    width: 90%;
+}
+
+.contentLogin form input{
+    margin-top: 8px;
+    height: 35px;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.buttonLogin{
+    width: 100%;
+    height: 35px;
+    background: #D00000;
+    border: 1px solid #D00000;
+    border-radius: 8px;
+    color: white;
+    margin-top: 8px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    transition: filter 0.2s;
+}
+
+.buttonLogin:hover {
+    filter: brightness(70%);
 }
 
 .cadastroButton_login {
-    margin-top: 10px;
-    background-color: #D00000 !important;
+    width: 100%;
+    height: 35px;
+    background: #D00000;
+    border: 1px solid #D00000;
+    border-radius: 8px;
+    color: white;
+    margin-top: 8px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    transition: filter 0.2s;
+}
+
+.cadastroButton_login:hover {
+    filter: brightness(70%);
 }
 
 .homeButton_login {
@@ -62,11 +113,6 @@
         align-items: center;
         justify-content: center;
         max-width: auto;
-        background:url("https://i.pinimg.com/originals/ae/ab/e5/aeabe54da1806324300ad9dba1f9c5a3.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-x: center;
-        background-position-y: center;
         overflow: auto;
     }
     
