@@ -21,6 +21,12 @@ const OpcaoCategories = [
         name: "Abstrato",
     },
     {
+        name: "Releitura",
+    },
+    {
+      name: "Animais",
+    },
+    {
         name: "Outro",
     },
 ];
