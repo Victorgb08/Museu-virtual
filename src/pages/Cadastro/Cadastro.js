@@ -85,18 +85,6 @@ function Cadastro() {
       text: " Pinturas",
       iconSize: "1.4em",
     },
-    {
-      pathName: "/maiscomentadas",
-      icon: <BiCommentAdd />,
-      text: " Mais Comentadas",
-      iconSize: "1.4em",
-    },
-    {
-      pathName: "/footer",
-      icon: <MdInfo />,
-      text: " Footer",
-      iconSize: "1.4em",
-    },
   ];
 
   function handleClick(pathName) {
