@@ -7,22 +7,34 @@ import { USER_ID, TOKEN_KEY } from '../../Services/auth';
 import { Button } from "react-bootstrap";
 import { ImHome } from "react-icons/im";
 
+const OpcaoCategories = [
+    {
+        name: "Natureza",
+    },
+    {
+        name: "Retrato",
+    },
+    {
+        name: "Cidade",
+    },
+    {
+        name: "Abstrato",
+    },
+    {
+        name: "Outro",
+    },
+];
+
 function AddPainting(){
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [objective, setObjective] = useState('');
     const [src, setSrc] = useState('');
     const [category, setCategory] = useState('');
-    const [width, setWidth] = useState('');
-    const [height, setHeight] = useState('');
+    const count=0;
     const user_id = sessionStorage.getItem(USER_ID);
     const token = sessionStorage.getItem(TOKEN_KEY);
-    const updateSelectWidth=(e)=>{
-        setWidth(e.target.value)
-    };
-    const updateSelectHeight=(e)=>{
-        setHeight(e.target.value)
-    };
+    
     const OpcaoValores = [
         {
             numero: 1,
@@ -64,8 +76,7 @@ function AddPainting(){
             objective, 
             src, 
             category,
-            width,
-            height,
+            count,
         };
         console.log(token);
         try {
@@ -78,6 +89,10 @@ function AddPainting(){
             console.log(err);
             alert('Erro no cadastro da pintura, tente novamente.');
         }
+    }
+
+    function updateSelectCategory (e) {
+        setCategory(e.target.value);
     }
 
     return(
@@ -109,27 +124,13 @@ function AddPainting(){
                             value={src}
                             onChange={e => setSrc(e.target.value)}
                         />
-                        <input  
-                            placeholder="Categoria"
-                            value={category}
-                            onChange={e => setCategory(e.target.value)}
-                        />
-                        <div className="seletor">
-                            <select
-                                onChange={updateSelectWidth}>
-                                    <option value={width}>Selecione a Largura</option>
-                                    {OpcaoValores.map((valores) => (
-                                        <option value={valores.numero}>{valores.numero}</option>
-                                    ))}
-                            </select>
-                            <select
-                                onChange={updateSelectHeight}>
-                                    <option value={height}>Selecione a Altura</option>
-                                    {OpcaoValores.map((valores) => (
-                                        <option value={valores.numero}>{valores.numero}</option>
-                                    ))}
-                            </select>
-                        </div>
+                        <select
+                            onChange={updateSelectCategory}>
+                                <option value={category}>Selecione a Categoria</option>
+                                {OpcaoCategories.map((categorias) => (
+                                    <option value={categorias.name}>{categorias.name}</option>
+                                ))}
+                        </select>
                         <button className="buttonAdd" type="submit">Adicionar Pintura</button>
                         <button className="buttonAdd" onClick={() => history.push("/perfil")}>Cancelar e voltar ao Perfil</button>
                         <Button className="homeButton" variant="outlined" color="primary" onClick={() => history.push("Home")} >

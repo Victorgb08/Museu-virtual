@@ -1,30 +1,32 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import api from "../../Services/api";
+import "./MaisComentadas.css";
 
 function MaisComentadas(){
-    const history=useHistory();
+    const [paintings, setPaintings] = useState([]);
+
+    async function getCommentPaintings(){
+        try {
+            const response = await api.get(`/paintings`);
+            // console.log(O url de perfil é: ${UrlPerfil});
+            setPaintings(response.data);
+        } catch (error) {
+            console.warn(error);
+            alert("Algo deu errado");
+        }
+    };
+
+    
+
+
+    useEffect(() => {
+        getCommentPaintings();
+    }, []);
 
     return (
-        <div>
-            <h1>Login</h1>
-            <Link to="cadastro">Cadastro</Link>
-            <br/>
-            <Link to="footer" >Footer</Link>
-            <br/>
-            <Link to="home" >Home</Link>
-            <br/>
-            <Link to="login" >Login</Link>
-            <br/>
-            <Link to="perfil" >Perfil</Link>
-            <br/>
-            <button
-                onClick={()=>{
-                    history.push("pinturas")
-                }}
-            >
-                Pinturas
-            </button>
-        </div>            
+        <div className="PaiMais">
+            
+        </div>
         );
 }
 

@@ -56,6 +56,15 @@
     text-align: center;
 }
 
+.contentAdd form select{
+    margin-top: 8px;
+    height: 35px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 0 24px;
+    text-align: center;
+}
+
 .seletor{
     display: flex !important;
     justify-content: space-between;

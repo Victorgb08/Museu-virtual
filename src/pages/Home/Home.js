@@ -17,7 +17,7 @@ function Home({location}){
   // const [open, setOpen] = useState(false);
   const ref_objetivo = useRef();
 
-  console.log(location);
+  // console.log(location);
 
   useEffect(()=>{
     const state = location?.state;
@@ -33,7 +33,7 @@ function Home({location}){
     setImg(image);
     setPainting_id(image.painting_id);
     getByIdPainting();
-    console.log(image.painting_id);
+    // console.log(image.painting_id);
   }
 
   function handleClose (){
@@ -58,11 +58,22 @@ useEffect(() => {
 const [comment, setComment] = useState();
 const [painting_id, setPainting_id] = useState();
 
+function incremento(valor) {
+  valor=valor+1;
+  return valor;
+}
 
 async function postUserComments (){
-  const data = {painting_id, comment}
-  const response = await api.post(`/comments`, data)
-  console.log(response.data)
+  const data = {painting_id, comment};
+  const countGet = await api.get(`/painting/${painting_id}`);
+  console.log(countGet.data.count);
+  let count = incremento(countGet.data.count);
+  const response = await api.post(`/comments`, data);
+  const countPut = await api.put(`/paintings/${painting_id}`,{count});
+  console.log(countGet.data.count);
+  console.log(countPut);
+
+  // console.log(response.data)
 };
 
 const [commentsById, setCommentsById] = useState([]);
@@ -70,7 +81,7 @@ const [commentsById, setCommentsById] = useState([]);
 async function getByIdPainting (){
   const response = await api.get(`/comments/${painting_id}`);
   setCommentsById([...response.data]);
-  console.log(response)
+  // console.log(response)
 };
 
     return (

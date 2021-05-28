@@ -67,7 +67,7 @@ function Perfil(){
         if (x.password === oldPassword)
             await api.put(`/users/${IdUsusario}`, {password});
         else 
-            alert("deu ruim");
+            alert("A senha atual está incorreta, tente novamente");
 
     }
 
@@ -90,11 +90,23 @@ function Perfil(){
 
     const [commentsById, setCommentsById] = useState([]);
 
-    async function postUserComments (){
-        const data = {painting_id, comment}
-        const response = await api.post(`/comments`, data)
-        console.log(response.data)
-    };
+    function incremento(valor) {
+        valor=valor+1;
+        return valor;
+      }
+      
+      async function postUserComments (){
+        const data = {painting_id, comment};
+        const countGet = await api.get(`/painting/${painting_id}`);
+        console.log(countGet.data.count);
+        let count = incremento(countGet.data.count);
+        const response = await api.post(`/comments`, data);
+        const countPut = await api.put(`/paintings/${painting_id}`,{count});
+        console.log(countGet.data.count);
+        console.log(countPut);
+      
+        // console.log(response.data)
+      };
 
     function handleClose (){
         setImg(undefined);

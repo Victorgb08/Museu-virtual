@@ -8,12 +8,22 @@ import { Form } from "react-bootstrap";
 
 const OpcaoCategories = [
     {
-        name: "Raposa",
-        id: 1,
+        name: "Natureza",
     },
     {
-        name: "dsadas",
-        id: 2,
+        name: "Retrato",
+    },
+    {
+        name: "Cidade",
+    },
+    {
+        name: "Abstrato",
+    },
+    {
+        name: "Outro",
+    },
+    {
+        name: "Mais Comentadas",
     },
 ];
 
@@ -44,16 +54,36 @@ function Pinturas(){
     //     return paintings;
     // }
 
+    // function ordenarComentadas(dados){
+    //     dados.sort(function(x,y){
+    //         return y.count - x.count;
+    //     });
+    // }
+
     //Função para montar o componente que vai ta com as imagens do backEnd
     async function getAllPaintings(){
         try {
-            if(categoria !== all){
+            if(categoria === "Mais Comentadas"){
+                console.log("2")
                 const response = await api.get("/paintings");
+                response.data.sort(function(x,y){
+                    return y.count - x.count;
+                });
+                setPaintings(...[response.data]);
+                // const vetorOrdenado = ordenarComentadas(response.data);
+            }
+            
+            else if(categoria !== all){
+                console.log("1")
+                const response = await api.get("/paintings");
+                console.log(response.data);
                 const novo = response.data.filter((filtrados)=> filtrados.category === categoria);
                 // console.log(novo);
                 // console.log(response.data);
                 setPaintings(novo);
-            } else{
+            } 
+            else{
+                console.log("3")
                 const response = await api.get("/paintings");
                 //console.log(response.data);
                 setPaintings([...response.data]);
@@ -88,11 +118,25 @@ function Pinturas(){
 
     const [commentsById, setCommentsById] = useState([]);
 
-    async function postUserComments (){
-        const data = {painting_id, comment}
-        const response = await api.post(`/comments`, data)
-        console.log(response.data)
-    };
+    function incremento(valor) {
+        valor=valor+1;
+        return valor;
+      }
+      
+      async function postUserComments (){
+        const data = {painting_id, comment};
+        const countGet = await api.get(`/painting/${painting_id}`);
+        console.log(countGet.data.count);
+        let count = incremento(countGet.data.count);
+        const response = await api.post(`/comments`, data);
+        const countPut = await api.put(`/paintings/${painting_id}`,{count});
+        // console.log(countGet.data.count);
+        // console.log(countPut);
+        // console.log(response.data)
+      };
+
+
+
 
     function handleClose (){
         setImg(undefined);
@@ -107,7 +151,7 @@ function Pinturas(){
             <List>
             <div className="total_modal">
               <div className="container_infos">
-                <div className="titulo_info">{img?.title}</div>
+                <div className="titulo_info_pinturas">{img?.title}</div>
                 <div className="descricao_info">{img?.description}</div>
               </div>
             <div className="container_modal">
@@ -143,7 +187,7 @@ function Pinturas(){
                 <div className="imgDisp_pinturas" >
                     {paintings.map((artes) => (
                         <div className="artsMuseu_pinturas" >
-                        <img name={artes.name} src={artes.src} alt={artes.alt} className="image_car_pinturas" onClick={() => handleClick(artes)} />
+                        <img name={artes.name} src={artes.src} alt={artes.name} className="image_car_pinturas" onClick={() => handleClick(artes)} />
                         </div>
                             ))}
                     </div>
