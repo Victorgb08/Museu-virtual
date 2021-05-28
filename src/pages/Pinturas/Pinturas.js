@@ -20,7 +20,13 @@ const OpcaoCategories = [
         name: "Abstrato",
     },
     {
-        name: "Outro",
+        name: "Releitura",
+    },
+    {
+      name: "Animais",
+    },
+    {
+      name: "Outro",
     },
     {
         name: "Mais Comentadas",
@@ -147,7 +153,7 @@ function Pinturas(){
           >
             <List>
             <div className="total_modal">
-              <div className="container_infos">
+              <div className="container_infos_pinturas">
                 <div className="titulo_info_pinturas">{img?.title}</div>
                 <div className="descricao_info">{img?.description}</div>
               </div>

@@ -38,6 +38,15 @@
         max-height: 600px;
 }
 
+.container_comentarios_pinturas {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.container_infos_pinturas {
+    margin-right: 5%;
+}
+
 @media only screen and (max-width:1000px){
     .imgDisp_pinturas{
         display: grid;

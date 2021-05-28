@@ -144,7 +144,7 @@ function Perfil(){
           >
             <List>
             <div className="total_modal">
-              <div className="container_infos">
+              <div className="container_infos_perfil">
                 <div className="titulo_info">{img?.title}</div>
                 <div className="descricao_info">{img?.description}</div>
               </div>

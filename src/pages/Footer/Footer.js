@@ -38,21 +38,21 @@ function Footer(){
                     <i class="fab fa-instagram tam_icon"></i>
                 </a> */}
                 <div className="icon_teste">
-                    <a href="https://www.google.com" role="button" className="move_teste1">
+                    <a href="https://www.facebook.com/victor.guedes.1257/" role="button" className="move_teste1">
                         <IconButton >
                             <i class="gg-facebook"></i>
                         </IconButton>  
                     </a>
                 </div>
                 <div className="icon_teste">
-                    <a href="https://www.google.com" role="button" className="move_teste2">
+                    <a href="https://www.instagram.com/joao_gato12/" role="button" className="move_teste2">
                         <IconButton>
                             <i class="gg-instagram"></i>
                         </IconButton>  
                     </a>
                 </div>
                 <div className="icon_teste">
-                    <a href="https://www.google.com" role="button" className="move_teste3">
+                    <a href="https://twitter.com/pinterestbr" role="button" className="move_teste3">
                         <IconButton>
                             <i class="gg-twitter"></i>
                         </IconButton>  
