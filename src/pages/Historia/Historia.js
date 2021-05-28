@@ -11,7 +11,7 @@ import { useRef, useEffect } from "react";
 
 const Accordion = withStyles({
     root: {
-      background:'rgba(0, 0, 0, .03)',
+      backgroundColor: 'rgba(0,0,0,0.4)',
       border: '1px solid rgba(0, 0, 0, .125)',
       '&:not(:last-child)': {
         borderBottom:0,
@@ -25,7 +25,7 @@ const Accordion = withStyles({
   
   const AccordionSummary = withStyles({
     root: {
-      backgroundColor: 'rgba(0, 0, 0, .03)',
+      backgroundColor: 'rgba(0,0,0,0.4)',
       borderBottom: '1px solid rgba(0, 0, 0, .125)',
       marginBottom: -1,
       minHeight: 56,
@@ -97,37 +97,31 @@ Nós da Art One prezamos por um ambiente saudável e de muito aprendizado, permi
                 <div className="accordion_his">
                     <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}} >Collapsible Group Item #1</Typography>
+                        <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}} >Como eu posso adicionar novas artes?</Typography>
                         </AccordionSummary>
                         <AccordionDetails >
                         <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            Primeiro acesse a página de perfil e no canto superior direito tem o ícone com o nome "adicionar pintura", clique no nome e adicione suas novas artes!! Se tiver um pinterest copie um dos urls das suas artes e mande pra ca
                         </Typography>
                         </AccordionDetails>
                     </Accordion>
                     <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                        <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>Collapsible Group Item #2</Typography>
+                        <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>Quanto de conhecimento ou que tipo de ator eu tenho que ser para poder postar as minhas artes?</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                         <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            É somente necessário você se identificar como artista e desenvolver suas próprias artes
                         </Typography>
                         </AccordionDetails>
                     </Accordion>
                     <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                        <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>Collapsible Group Item #3</Typography>
+                        <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>Como eu faço a Art One crescer?</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                         <Typography style={{fontSize:'1rem',color:'white',textShadow: '0.1em 0.1em 0.2em black'}}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            reposte suas artes em outras redes socias e marque a gente nas suas publicações!!(redes no rodapé da página)
                         </Typography>
                         </AccordionDetails>
                     </Accordion>
