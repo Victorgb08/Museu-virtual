@@ -24,6 +24,7 @@
     justify-self: center; 
     justify-content: center; 
     align-items: center !important; 
+    overflow-y: auto;
 } 
  
 .form_perf { 
@@ -170,6 +171,19 @@
     height: 50px;
 }
 
+.img_modal {
+    max-height: 500px;
+}
+
+.titulo_info {
+    color: white;
+
+  }
+
+  .container_comentarios {
+    max-height: 500px;
+    overflow:auto;
+}
 
 @media only screen and (max-width: 970px){
     .header {
@@ -204,6 +218,8 @@
         position: relative;
     }
 
+    
+
     .carrossel_perf {
         width: 300px;
         justify-self: center !important;
@@ -223,6 +239,7 @@
     }
     .titulo_info {
         font-size: 30px !important;
+        color: white;
 
       }
       

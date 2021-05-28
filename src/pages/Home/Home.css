@@ -57,9 +57,10 @@
   width: 30%;
   align-items: center;
   justify-items: center;
-  overflow-y: auto;
+  overflow: auto;
   padding:10px;
   grid-row-gap: 10px;
+  max-height: 500px;
 }
 
 .comentarios_especificos {
@@ -402,11 +403,16 @@
 
   .container_comentarios_home {
     width: unset;
+    max-height: 300px;
   }
 
   .titulo_info_home {
-    margin-top: 100px !important;
     color: #FFFFFF;
+    text-align: center;
+  }
+
+  .container_infos_home{
+    text-align: center;
   }
   .container_modal {
     display: flex;

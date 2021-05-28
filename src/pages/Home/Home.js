@@ -96,7 +96,7 @@ async function getByIdPainting (){
           >
             <List>
             <div className="total_modal">
-              <div className="container_infos">
+              <div className="container_infos_home">
                 <div className="titulo_info_home">{img?.title}</div>
                 <div className="descricao_info">{img?.description}</div>
               </div>

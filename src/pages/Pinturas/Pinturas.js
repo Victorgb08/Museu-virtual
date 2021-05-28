@@ -173,9 +173,9 @@ function Pinturas(){
             </div>
             </List>
           </Modal>
-            <Select value={categoria} displayEmpty onChange={updateSelectCateg}>
+            <Select value={categoria} displayEmpty onChange={updateSelectCateg} >
                 <MenuItem value={null} disabled >Selecione uma Categoria</MenuItem>
-                    <MenuItem value="all">Todas as Pinturas</MenuItem>
+                    <MenuItem value="all" >Todas as Pinturas</MenuItem>
                     {OpcaoCategories.map((category) => (
                         <MenuItem key={category.id} value={category.name}>{category.name}</MenuItem>
                     ))}
