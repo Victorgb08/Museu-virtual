@@ -1,22 +1,43 @@
-.list{
-    width: 220px;
+.list {
+  width: 220px;
 }
 
-.listItemText{
-    color: #343434;
-    margin-left: 16px;
+.listItemText {
+  color: white;
+  margin-left: 16px;
 }
 
-.Nome{
-    margin-right: 5px;
+.Nome {
+  margin-right: 15px;
 }
 
-.Usuario{
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+.Usuario {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 .toolbar {
-    background: linear-gradient(black,darkred);
+  background: linear-gradient(black, darkred);
+}
+
+.StyleMenu {
+  background-image: linear-gradient(
+    to bottom,
+    #0f0101,
+    #2c0e0d,
+    #491014,
+    #671116,
+    #861016,
+    #8f0f15,
+    #970f13,
+    #a00f10,
+    #940d0f,
+    #880c0d,
+    #7c0a0b,
+    #710909
+
+  ) !important;
+
+  
 }

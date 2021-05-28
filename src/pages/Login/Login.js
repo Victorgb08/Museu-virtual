@@ -104,7 +104,10 @@ function Login() {
       <div className="button_log">
             <IconButton color="inherit" aria-label="menu" onClick={()=>handleDrawer(!open)} ><FiMenu/></IconButton>
             </div>
-            <Drawer open={open} onClose={()=> handleDrawer(false)}>
+            <Drawer 
+            PaperProps={{className:"StyleMenu"}}
+            open={open} 
+            onClose={()=> handleDrawer(false)}>
                 <List className="list">
                     {menuPages.map((listItem) => {
                         return (
@@ -113,7 +116,7 @@ function Login() {
                                 onClick={()=> { handleClick(listItem.pathName);}}
                                 selected={currentPage === listItem.pathName}
                                 >
-                                <IconContext.Provider value={{ color: "#343434", size: listItem.iconSize}}>
+                                <IconContext.Provider value={{ color: "#DAD3D3", size: listItem.iconSize}}>
                                     {listItem.icon}
                                 </IconContext.Provider>
                                 <ListItemText className="listItemText">
